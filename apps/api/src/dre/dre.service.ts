@@ -91,7 +91,9 @@ export class DREService {
 
     if (types?.length) {
       const typeValues = Prisma.join(types);
-      whereClauses.push(Prisma.sql`pcg."type" IN (${typeValues})`);
+      whereClauses.push(
+        Prisma.sql`pcg."type"::text IN (${typeValues})`,
+      );
     }
 
     if (origins?.length) {

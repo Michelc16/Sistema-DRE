@@ -1,7 +1,7 @@
 import { Injectable, Logger } from '@nestjs/common';
 import { Prisma } from '@prisma/client';
 import { PrismaService } from '../../prisma/prisma.service';
-import { TinyClient, TinySearchParams } from './tiny-client';
+import { TinyClient } from './tiny-client';
 import {
   mapFinancialToTransactions,
   mapInvoiceToTransactions,
@@ -42,10 +42,9 @@ export class TinyIntegrationService {
     const client = new TinyClient(options.token);
 
     for (const module of modules) {
-      const listParams: TinySearchParams = {
+      const listParams = {
         updateFrom: options.from,
         issuedFrom: options.from,
-        dueFrom: options.from,
         pageSize: options.pageSize ?? TinyIntegrationService.DEFAULT_PAGE_SIZE,
       };
       const pulled = await this.collect(module, client, listParams);
@@ -63,16 +62,22 @@ export class TinyIntegrationService {
   private async collect(
     module: TinyModuleKind,
     client: TinyClient,
-    params: TinySearchParams,
+    params: { updateFrom?: string; issuedFrom?: string; pageSize?: number },
   ) {
     const accumulator: any[] = [];
     for (let page = 1; page <= TinyIntegrationService.MAX_PAGES; page++) {
-      const payload = await this.fetchModule(client, module, { ...params, page });
-      const items = this.extractModuleData(module, payload);
-      if (!items.length) break;
-      accumulator.push(...items);
+      const summaries = await this.fetchModule(client, module, { ...params, page });
+      if (!summaries.length) break;
 
-      if (items.length < (params.pageSize ?? TinyIntegrationService.DEFAULT_PAGE_SIZE)) {
+      for (const summary of summaries) {
+        const detail = await this.fetchDetail(client, module, summary);
+        if (detail) accumulator.push(detail);
+      }
+
+      if (
+        summaries.length <
+        (params.pageSize ?? TinyIntegrationService.DEFAULT_PAGE_SIZE)
+      ) {
         break;
       }
     }
@@ -87,25 +92,99 @@ export class TinyIntegrationService {
     switch (module) {
       case 'orders':
         transactions = payload.flatMap((order) =>
-          mapOrderToTransactions(order, tenantId),
+          mapOrderToTransactions(order, tenantId, 'ERP:Tiny:orders'),
         );
         break;
       case 'invoices':
         transactions = payload.flatMap((invoice) =>
-          mapInvoiceToTransactions(invoice, tenantId),
+          mapInvoiceToTransactions(invoice, tenantId, 'ERP:Tiny:invoices'),
         );
         break;
       case 'financial':
         transactions = payload.flatMap((entry) =>
-          mapFinancialToTransactions(entry, tenantId),
+          mapFinancialToTransactions(entry, tenantId, 'ERP:Tiny:financial'),
         );
         break;
     }
 
     if (!transactions.length) return 0;
 
+    const uniqueRefs = new Set<string>(
+      transactions
+        .map((tx) => tx.sourceRef)
+        .filter((ref): ref is string => Boolean(ref)),
+    );
+
+    let existingRefs = new Set<string>();
+    if (uniqueRefs.size) {
+      const origins = Array.from(
+        new Set(
+          transactions
+            .map((tx) => tx.origin ?? 'ERP:Tiny')
+            .filter((origin): origin is string => Boolean(origin)),
+        ),
+      );
+      const existing = await this.prisma.transaction.findMany({
+        where: {
+          tenantId,
+          origin: { in: origins },
+          sourceRef: { in: Array.from(uniqueRefs) },
+        },
+        select: { sourceRef: true },
+      });
+      existingRefs = new Set(
+        existing
+          .map((item) => item.sourceRef)
+          .filter((ref): ref is string => Boolean(ref)),
+      );
+    }
+
+    const { fresh, updates } = transactions.reduce(
+      (acc: { fresh: any[]; updates: any[] }, tx: any) => {
+        if (!tx.sourceRef || !existingRefs.has(tx.sourceRef)) {
+          acc.fresh.push(tx);
+        } else {
+          acc.updates.push(tx);
+        }
+        return acc;
+      },
+      { fresh: [] as any[], updates: [] as any[] },
+    );
+
+    if (updates.length) {
+      await Promise.all(
+        updates.map((tx: any) =>
+          this.prisma.transaction.updateMany({
+            where: {
+              tenantId,
+              origin: tx.origin ?? 'ERP:Tiny',
+              sourceRef: tx.sourceRef!,
+            },
+            data: {
+              date: tx.date instanceof Date ? tx.date : new Date(tx.date),
+              accrualDate:
+                tx.accrualDate instanceof Date
+                  ? tx.accrualDate
+                  : tx.accrualDate
+                  ? new Date(tx.accrualDate)
+                  : null,
+              debit: tx.debit,
+              credit: tx.credit,
+              amount: new Prisma.Decimal(tx.amount ?? 0),
+              currency: tx.currency ?? 'BRL',
+              memo: tx.memo ?? null,
+              origin: tx.origin ?? 'ERP:Tiny',
+              meta: tx.meta ?? {},
+            },
+          }),
+        ),
+      );
+    }
+
+    if (!fresh.length) return 0;
+
     await this.prisma.transaction.createMany({
-      data: transactions.map((tx) => ({
+      data: fresh.map((tx) => ({
         tenantId: tx.tenantId,
         date: tx.date instanceof Date ? tx.date : new Date(tx.date),
         accrualDate:
@@ -123,15 +202,16 @@ export class TinyIntegrationService {
         sourceRef: tx.sourceRef ?? null,
         meta: tx.meta ?? {},
       })),
+      skipDuplicates: true,
     });
 
-    return transactions.length;
+    return fresh.length;
   }
 
   private async fetchModule(
     client: TinyClient,
     module: TinyModuleKind,
-    params: TinySearchParams,
+    params: { updateFrom?: string; issuedFrom?: string; pageSize?: number; page?: number },
   ) {
     switch (module) {
       case 'orders':
@@ -139,38 +219,35 @@ export class TinyIntegrationService {
       case 'invoices':
         return client.searchInvoices(params);
       case 'financial':
-        return client.searchFinancial(params);
+        return [
+          ...(await client.searchReceivables(params)),
+          ...(await client.searchPayables(params)),
+        ];
       default:
         throw new Error(`Unsupported Tiny module "${module}"`);
     }
   }
 
-  private extractModuleData(module: TinyModuleKind, payload: any) {
-    const root = payload?.retorno ?? payload ?? {};
-    switch (module) {
-      case 'orders':
-        return this.unwrapCollection(root, 'pedidos', 'pedido') ??
-          this.unwrapCollection(root, 'orders', 'order');
-      case 'invoices':
-        return this.unwrapCollection(root, 'notas_fiscais', 'nota_fiscal') ??
-          this.unwrapCollection(root, 'invoices', 'invoice');
-      case 'financial':
-        return this.unwrapCollection(root, 'lancamentos', 'lancamento') ??
-          this.unwrapCollection(root, 'financial', 'entry');
-      default:
-        return [];
+  private async fetchDetail(client: TinyClient, module: TinyModuleKind, summary: any) {
+    try {
+      switch (module) {
+        case 'orders':
+          return client.getOrderDetail(summary);
+        case 'invoices':
+          return client.getInvoiceDetail(summary);
+        case 'financial':
+          return summary.__tinyType === 'pagar'
+            ? client.getPayableDetail(summary)
+            : client.getReceivableDetail(summary);
+        default:
+          return summary;
+      }
+    } catch (error) {
+      this.logger.warn(
+        `Não foi possível obter detalhes do módulo ${module}: ${error instanceof Error ? error.message : error}`,
+      );
+      return summary;
     }
   }
 
-  private unwrapCollection(root: any, pluralKey: string, singularKey: string) {
-    const collection = root?.[pluralKey];
-    if (!collection) return [];
-    if (Array.isArray(collection)) {
-      return collection.map((entry) => entry?.[singularKey] ?? entry);
-    }
-    if (Array.isArray(collection?.[pluralKey])) {
-      return collection[pluralKey].map((entry: any) => entry?.[singularKey] ?? entry);
-    }
-    return [];
-  }
 }

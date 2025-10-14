@@ -3,6 +3,7 @@ import {
   Body,
   Controller,
   Get,
+  Param,
   Post,
   Query,
 } from '@nestjs/common';
@@ -30,7 +31,7 @@ export class TinyController {
 
   @Post('sync')
   async sync(
-    @Query('tenantId') tenantId: string,
+    @Param('tenantId') tenantId: string,
     @Body() body: TinySyncBody,
   ) {
     const existingConfig = await this.configService.getStatus(tenantId);
@@ -68,7 +69,7 @@ export class TinyController {
 
   @Post('config')
   async configure(
-    @Query('tenantId') tenantId: string,
+    @Param('tenantId') tenantId: string,
     @Body() body: TinyConfigBody,
   ) {
     return this.configService.upsertConfig({
@@ -81,7 +82,7 @@ export class TinyController {
   }
 
   @Get('status')
-  async status(@Query('tenantId') tenantId: string) {
+  async status(@Param('tenantId') tenantId: string) {
     return this.configService.getStatus(tenantId);
   }
 }

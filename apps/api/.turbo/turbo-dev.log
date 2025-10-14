@@ -2,492 +2,402 @@
 > @dre/api@0.1.0 dev /media/dev/Servidor/sistema-dre/apps/api
 > nest start --watch
 
-[2J[3J[H[[90m16:14:29[0m] Starting compilation in watch mode...
+[2J[3J[H[[90m17:43:56[0m] Starting compilation in watch mode...
 
-[[90m16:14:31[0m] Found 0 errors. Watching for file changes.
+[[90m17:43:57[0m] Found 0 errors. Watching for file changes.
 
-[32m[Nest] 2960247  - [39m14/10/2025, 16:14:31 [32m    LOG[39m [38;5;3m[NestFactory] [39m[32mStarting Nest application...[39m
-[32m[Nest] 2960247  - [39m14/10/2025, 16:14:31 [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mPrismaModule dependencies initialized[39m[38;5;3m +9ms[39m
-[32m[Nest] 2960247  - [39m14/10/2025, 16:14:31 [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mAppModule dependencies initialized[39m[38;5;3m +0ms[39m
-[32m[Nest] 2960247  - [39m14/10/2025, 16:14:31 [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mDREModule dependencies initialized[39m[38;5;3m +1ms[39m
-[32m[Nest] 2960247  - [39m14/10/2025, 16:14:31 [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mTinyModule dependencies initialized[39m[38;5;3m +0ms[39m
-[32m[Nest] 2960247  - [39m14/10/2025, 16:14:31 [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mImportModule dependencies initialized[39m[38;5;3m +0ms[39m
-[32m[Nest] 2960247  - [39m14/10/2025, 16:14:31 [32m    LOG[39m [38;5;3m[RoutesResolver] [39m[32mAppController {/v1}:[39m[38;5;3m +5ms[39m
-[32m[Nest] 2960247  - [39m14/10/2025, 16:14:31 [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/v1, GET} route[39m[38;5;3m +2ms[39m
-[32m[Nest] 2960247  - [39m14/10/2025, 16:14:31 [32m    LOG[39m [38;5;3m[RoutesResolver] [39m[32mDREController {/v1/dre}:[39m[38;5;3m +0ms[39m
-[32m[Nest] 2960247  - [39m14/10/2025, 16:14:31 [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/v1/dre, GET} route[39m[38;5;3m +1ms[39m
-[32m[Nest] 2960247  - [39m14/10/2025, 16:14:31 [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/v1/dre/filters, GET} route[39m[38;5;3m +0ms[39m
-[32m[Nest] 2960247  - [39m14/10/2025, 16:14:31 [32m    LOG[39m [38;5;3m[RoutesResolver] [39m[32mImportController {/v1/tenants/:id/import}:[39m[38;5;3m +1ms[39m
-[32m[Nest] 2960247  - [39m14/10/2025, 16:14:31 [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/v1/tenants/:id/import, POST} route[39m[38;5;3m +0ms[39m
-[32m[Nest] 2960247  - [39m14/10/2025, 16:14:31 [32m    LOG[39m [38;5;3m[RoutesResolver] [39m[32mTinyController {/v1/tenants/:tenantId/tiny}:[39m[38;5;3m +0ms[39m
-[32m[Nest] 2960247  - [39m14/10/2025, 16:14:31 [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/v1/tenants/:tenantId/tiny/sync, POST} route[39m[38;5;3m +0ms[39m
-[32m[Nest] 2960247  - [39m14/10/2025, 16:14:31 [32m    LOG[39m [38;5;3m[NestApplication] [39m[32mNest application successfully started[39m[38;5;3m +47ms[39m
+[32m[Nest] 3165685  - [39m14/10/2025, 17:43:57 [32m    LOG[39m [38;5;3m[NestFactory] [39m[32mStarting Nest application...[39m
+[32m[Nest] 3165685  - [39m14/10/2025, 17:43:57 [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mPrismaModule dependencies initialized[39m[38;5;3m +9ms[39m
+[32m[Nest] 3165685  - [39m14/10/2025, 17:43:57 [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mAppModule dependencies initialized[39m[38;5;3m +0ms[39m
+[32m[Nest] 3165685  - [39m14/10/2025, 17:43:57 [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mDREModule dependencies initialized[39m[38;5;3m +1ms[39m
+[32m[Nest] 3165685  - [39m14/10/2025, 17:43:57 [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mTinyModule dependencies initialized[39m[38;5;3m +0ms[39m
+[32m[Nest] 3165685  - [39m14/10/2025, 17:43:57 [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mImportModule dependencies initialized[39m[38;5;3m +0ms[39m
+[32m[Nest] 3165685  - [39m14/10/2025, 17:43:57 [32m    LOG[39m [38;5;3m[RoutesResolver] [39m[32mAppController {/v1}:[39m[38;5;3m +4ms[39m
+[32m[Nest] 3165685  - [39m14/10/2025, 17:43:57 [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/v1, GET} route[39m[38;5;3m +2ms[39m
+[32m[Nest] 3165685  - [39m14/10/2025, 17:43:57 [32m    LOG[39m [38;5;3m[RoutesResolver] [39m[32mDREController {/v1/dre}:[39m[38;5;3m +0ms[39m
+[32m[Nest] 3165685  - [39m14/10/2025, 17:43:57 [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/v1/dre, GET} route[39m[38;5;3m +1ms[39m
+[32m[Nest] 3165685  - [39m14/10/2025, 17:43:57 [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/v1/dre/filters, GET} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 3165685  - [39m14/10/2025, 17:43:57 [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/v1/dre/export, GET} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 3165685  - [39m14/10/2025, 17:43:57 [32m    LOG[39m [38;5;3m[RoutesResolver] [39m[32mImportController {/v1/tenants/:id/import}:[39m[38;5;3m +0ms[39m
+[32m[Nest] 3165685  - [39m14/10/2025, 17:43:57 [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/v1/tenants/:id/import, POST} route[39m[38;5;3m +1ms[39m
+[32m[Nest] 3165685  - [39m14/10/2025, 17:43:57 [32m    LOG[39m [38;5;3m[RoutesResolver] [39m[32mTinyController {/v1/tenants/:tenantId/tiny}:[39m[38;5;3m +0ms[39m
+[32m[Nest] 3165685  - [39m14/10/2025, 17:43:57 [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/v1/tenants/:tenantId/tiny/sync, POST} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 3165685  - [39m14/10/2025, 17:43:57 [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/v1/tenants/:tenantId/tiny/config, POST} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 3165685  - [39m14/10/2025, 17:43:57 [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/v1/tenants/:tenantId/tiny/status, GET} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 3165685  - [39m14/10/2025, 17:43:57 [32m    LOG[39m [38;5;3m[NestApplication] [39m[32mNest application successfully started[39m[38;5;3m +58ms[39m
 API on http://localhost:4000/v1
-[31m[Nest] 2960247  - [39m14/10/2025, 16:15:41 [31m  ERROR[39m [38;5;3m[ExceptionsHandler] [39m[31mTiny ERP error 404 (Not Found): File not found.
-[39m
-Error: Tiny ERP error 404 (Not Found): File not found.
+[31m[Nest] 3165685  - [39m14/10/2025, 17:45:46 [31m  ERROR[39m [38;5;3m[ExceptionsHandler] [39m[31m
+Invalid `prisma.$queryRaw()` invocation:
 
-    at TinyClient.post (/media/dev/Servidor/sistema-dre/apps/api/dist/integrations/tiny/tiny-client.js:52:19)
-    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
-    at async TinyIntegrationService.collect (/media/dev/Servidor/sistema-dre/apps/api/dist/integrations/tiny/tiny.service.js:50:29)
-    at async TinyIntegrationService.sync (/media/dev/Servidor/sistema-dre/apps/api/dist/integrations/tiny/tiny.service.js:37:28)
-    at async /media/dev/Servidor/sistema-dre/node_modules/.pnpm/@nestjs+core@10.4.20_@nestjs+common@10.4.20_reflect-metadata@0.2.2_rxjs@7.8.2__@nestjs+_1031b346502275d0fd746cdba7b0b7f6/node_modules/@nestjs/core/router/router-execution-context.js:46:28
-    at async /media/dev/Servidor/sistema-dre/node_modules/.pnpm/@nestjs+core@10.4.20_@nestjs+common@10.4.20_reflect-metadata@0.2.2_rxjs@7.8.2__@nestjs+_1031b346502275d0fd746cdba7b0b7f6/node_modules/@nestjs/core/router/router-proxy.js:9:17
-[2J[3J[H[[90m16:18:57[0m] File change detected. Starting incremental compilation...
 
-[[90m16:18:57[0m] Found 0 errors. Watching for file changes.
-
-[32m[Nest] 2970115  - [39m14/10/2025, 16:18:57 [32m    LOG[39m [38;5;3m[NestFactory] [39m[32mStarting Nest application...[39m
-[32m[Nest] 2970115  - [39m14/10/2025, 16:18:57 [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mPrismaModule dependencies initialized[39m[38;5;3m +9ms[39m
-[32m[Nest] 2970115  - [39m14/10/2025, 16:18:57 [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mAppModule dependencies initialized[39m[38;5;3m +0ms[39m
-[32m[Nest] 2970115  - [39m14/10/2025, 16:18:57 [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mDREModule dependencies initialized[39m[38;5;3m +1ms[39m
-[32m[Nest] 2970115  - [39m14/10/2025, 16:18:57 [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mTinyModule dependencies initialized[39m[38;5;3m +0ms[39m
-[32m[Nest] 2970115  - [39m14/10/2025, 16:18:57 [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mImportModule dependencies initialized[39m[38;5;3m +0ms[39m
-[32m[Nest] 2970115  - [39m14/10/2025, 16:18:57 [32m    LOG[39m [38;5;3m[RoutesResolver] [39m[32mAppController {/v1}:[39m[38;5;3m +3ms[39m
-[32m[Nest] 2970115  - [39m14/10/2025, 16:18:57 [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/v1, GET} route[39m[38;5;3m +2ms[39m
-[32m[Nest] 2970115  - [39m14/10/2025, 16:18:57 [32m    LOG[39m [38;5;3m[RoutesResolver] [39m[32mDREController {/v1/dre}:[39m[38;5;3m +0ms[39m
-[32m[Nest] 2970115  - [39m14/10/2025, 16:18:57 [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/v1/dre, GET} route[39m[38;5;3m +1ms[39m
-[32m[Nest] 2970115  - [39m14/10/2025, 16:18:57 [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/v1/dre/filters, GET} route[39m[38;5;3m +0ms[39m
-[32m[Nest] 2970115  - [39m14/10/2025, 16:18:57 [32m    LOG[39m [38;5;3m[RoutesResolver] [39m[32mImportController {/v1/tenants/:id/import}:[39m[38;5;3m +0ms[39m
-[32m[Nest] 2970115  - [39m14/10/2025, 16:18:57 [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/v1/tenants/:id/import, POST} route[39m[38;5;3m +0ms[39m
-[32m[Nest] 2970115  - [39m14/10/2025, 16:18:57 [32m    LOG[39m [38;5;3m[RoutesResolver] [39m[32mTinyController {/v1/tenants/:tenantId/tiny}:[39m[38;5;3m +0ms[39m
-[32m[Nest] 2970115  - [39m14/10/2025, 16:18:57 [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/v1/tenants/:tenantId/tiny/sync, POST} route[39m[38;5;3m +1ms[39m
-[32m[Nest] 2970115  - [39m14/10/2025, 16:18:57 [32m    LOG[39m [38;5;3m[NestApplication] [39m[32mNest application successfully started[39m[38;5;3m +50ms[39m
-API on http://localhost:4000/v1
-[2J[3J[H[[90m16:20:31[0m] File change detected. Starting incremental compilation...
-
-[96msrc/integrations/tiny/tiny-config.service.ts[0m:[93m19[0m:[93m24[0m - [91merror[0m[90m TS2339: [0mProperty 'tinyIntegrationConfig' does not exist on type 'PrismaService'.
-
-[7m19[0m     return this.prisma.tinyIntegrationConfig.upsert({
-[7m  [0m [91m                       ~~~~~~~~~~~~~~~~~~~~~[0m
-
-[96msrc/integrations/tiny/tiny-config.service.ts[0m:[93m40[0m:[93m24[0m - [91merror[0m[90m TS2339: [0mProperty 'tinyIntegrationConfig' does not exist on type 'PrismaService'.
-
-[7m40[0m     return this.prisma.tinyIntegrationConfig.findMany({
-[7m  [0m [91m                       ~~~~~~~~~~~~~~~~~~~~~[0m
-
-[96msrc/integrations/tiny/tiny-config.service.ts[0m:[93m46[0m:[93m24[0m - [91merror[0m[90m TS2339: [0mProperty 'tinyIntegrationConfig' does not exist on type 'PrismaService'.
-
-[7m46[0m     return this.prisma.tinyIntegrationConfig.update({
-[7m  [0m [91m                       ~~~~~~~~~~~~~~~~~~~~~[0m
-
-[96msrc/integrations/tiny/tiny-config.service.ts[0m:[93m56[0m:[93m24[0m - [91merror[0m[90m TS2339: [0mProperty 'tinyIntegrationConfig' does not exist on type 'PrismaService'.
-
-[7m56[0m     return this.prisma.tinyIntegrationConfig.findUnique({
-[7m  [0m [91m                       ~~~~~~~~~~~~~~~~~~~~~[0m
-
-[[90m16:20:32[0m] Found 4 errors. Watching for file changes.
-
-[2J[3J[H[[90m16:20:44[0m] File change detected. Starting incremental compilation...
-
-[96msrc/integrations/tiny/tiny-config.service.ts[0m:[93m19[0m:[93m24[0m - [91merror[0m[90m TS2339: [0mProperty 'tinyIntegrationConfig' does not exist on type 'PrismaService'.
-
-[7m19[0m     return this.prisma.tinyIntegrationConfig.upsert({
-[7m  [0m [91m                       ~~~~~~~~~~~~~~~~~~~~~[0m
-
-[96msrc/integrations/tiny/tiny-config.service.ts[0m:[93m40[0m:[93m24[0m - [91merror[0m[90m TS2339: [0mProperty 'tinyIntegrationConfig' does not exist on type 'PrismaService'.
-
-[7m40[0m     return this.prisma.tinyIntegrationConfig.findMany({
-[7m  [0m [91m                       ~~~~~~~~~~~~~~~~~~~~~[0m
-
-[96msrc/integrations/tiny/tiny-config.service.ts[0m:[93m46[0m:[93m24[0m - [91merror[0m[90m TS2339: [0mProperty 'tinyIntegrationConfig' does not exist on type 'PrismaService'.
-
-[7m46[0m     return this.prisma.tinyIntegrationConfig.update({
-[7m  [0m [91m                       ~~~~~~~~~~~~~~~~~~~~~[0m
-
-[96msrc/integrations/tiny/tiny-config.service.ts[0m:[93m56[0m:[93m24[0m - [91merror[0m[90m TS2339: [0mProperty 'tinyIntegrationConfig' does not exist on type 'PrismaService'.
-
-[7m56[0m     return this.prisma.tinyIntegrationConfig.findUnique({
-[7m  [0m [91m                       ~~~~~~~~~~~~~~~~~~~~~[0m
-
-[96msrc/integrations/tiny/tiny.module.ts[0m:[93m4[0m:[93m38[0m - [91merror[0m[90m TS2307: [0mCannot find module './tiny.scheduler' or its corresponding type declarations.
-
-[7m4[0m import { TinySchedulerService } from './tiny.scheduler';
-[7m [0m [91m                                     ~~~~~~~~~~~~~~~~~~[0m
-
-[[90m16:20:44[0m] Found 5 errors. Watching for file changes.
-
-[2J[3J[H[[90m16:21:01[0m] File change detected. Starting incremental compilation...
-
-[96msrc/integrations/tiny/tiny-config.service.ts[0m:[93m19[0m:[93m24[0m - [91merror[0m[90m TS2339: [0mProperty 'tinyIntegrationConfig' does not exist on type 'PrismaService'.
-
-[7m19[0m     return this.prisma.tinyIntegrationConfig.upsert({
-[7m  [0m [91m                       ~~~~~~~~~~~~~~~~~~~~~[0m
-
-[96msrc/integrations/tiny/tiny-config.service.ts[0m:[93m40[0m:[93m24[0m - [91merror[0m[90m TS2339: [0mProperty 'tinyIntegrationConfig' does not exist on type 'PrismaService'.
-
-[7m40[0m     return this.prisma.tinyIntegrationConfig.findMany({
-[7m  [0m [91m                       ~~~~~~~~~~~~~~~~~~~~~[0m
-
-[96msrc/integrations/tiny/tiny-config.service.ts[0m:[93m46[0m:[93m24[0m - [91merror[0m[90m TS2339: [0mProperty 'tinyIntegrationConfig' does not exist on type 'PrismaService'.
-
-[7m46[0m     return this.prisma.tinyIntegrationConfig.update({
-[7m  [0m [91m                       ~~~~~~~~~~~~~~~~~~~~~[0m
-
-[96msrc/integrations/tiny/tiny-config.service.ts[0m:[93m56[0m:[93m24[0m - [91merror[0m[90m TS2339: [0mProperty 'tinyIntegrationConfig' does not exist on type 'PrismaService'.
-
-[7m56[0m     return this.prisma.tinyIntegrationConfig.findUnique({
-[7m  [0m [91m                       ~~~~~~~~~~~~~~~~~~~~~[0m
-
-[[90m16:21:01[0m] Found 4 errors. Watching for file changes.
-
-[2J[3J[H[[90m16:21:13[0m] File change detected. Starting incremental compilation...
-
-[96msrc/integrations/tiny/tiny-config.service.ts[0m:[93m19[0m:[93m24[0m - [91merror[0m[90m TS2339: [0mProperty 'tinyIntegrationConfig' does not exist on type 'PrismaService'.
-
-[7m19[0m     return this.prisma.tinyIntegrationConfig.upsert({
-[7m  [0m [91m                       ~~~~~~~~~~~~~~~~~~~~~[0m
-
-[96msrc/integrations/tiny/tiny-config.service.ts[0m:[93m40[0m:[93m24[0m - [91merror[0m[90m TS2339: [0mProperty 'tinyIntegrationConfig' does not exist on type 'PrismaService'.
-
-[7m40[0m     return this.prisma.tinyIntegrationConfig.findMany({
-[7m  [0m [91m                       ~~~~~~~~~~~~~~~~~~~~~[0m
-
-[96msrc/integrations/tiny/tiny-config.service.ts[0m:[93m46[0m:[93m24[0m - [91merror[0m[90m TS2339: [0mProperty 'tinyIntegrationConfig' does not exist on type 'PrismaService'.
-
-[7m46[0m     return this.prisma.tinyIntegrationConfig.update({
-[7m  [0m [91m                       ~~~~~~~~~~~~~~~~~~~~~[0m
-
-[96msrc/integrations/tiny/tiny-config.service.ts[0m:[93m56[0m:[93m24[0m - [91merror[0m[90m TS2339: [0mProperty 'tinyIntegrationConfig' does not exist on type 'PrismaService'.
-
-[7m56[0m     return this.prisma.tinyIntegrationConfig.findUnique({
-[7m  [0m [91m                       ~~~~~~~~~~~~~~~~~~~~~[0m
-
-[[90m16:21:13[0m] Found 4 errors. Watching for file changes.
-
-[2J[3J[H[[90m16:21:49[0m] File change detected. Starting incremental compilation...
-
-[96msrc/integrations/tiny/tiny-config.service.ts[0m:[93m19[0m:[93m24[0m - [91merror[0m[90m TS2339: [0mProperty 'tinyIntegrationConfig' does not exist on type 'PrismaService'.
-
-[7m19[0m     return this.prisma.tinyIntegrationConfig.upsert({
-[7m  [0m [91m                       ~~~~~~~~~~~~~~~~~~~~~[0m
-
-[96msrc/integrations/tiny/tiny-config.service.ts[0m:[93m40[0m:[93m24[0m - [91merror[0m[90m TS2339: [0mProperty 'tinyIntegrationConfig' does not exist on type 'PrismaService'.
-
-[7m40[0m     return this.prisma.tinyIntegrationConfig.findMany({
-[7m  [0m [91m                       ~~~~~~~~~~~~~~~~~~~~~[0m
-
-[96msrc/integrations/tiny/tiny-config.service.ts[0m:[93m46[0m:[93m24[0m - [91merror[0m[90m TS2339: [0mProperty 'tinyIntegrationConfig' does not exist on type 'PrismaService'.
-
-[7m46[0m     return this.prisma.tinyIntegrationConfig.update({
-[7m  [0m [91m                       ~~~~~~~~~~~~~~~~~~~~~[0m
-
-[96msrc/integrations/tiny/tiny-config.service.ts[0m:[93m56[0m:[93m24[0m - [91merror[0m[90m TS2339: [0mProperty 'tinyIntegrationConfig' does not exist on type 'PrismaService'.
-
-[7m56[0m     return this.prisma.tinyIntegrationConfig.findUnique({
-[7m  [0m [91m                       ~~~~~~~~~~~~~~~~~~~~~[0m
-
-[[90m16:21:49[0m] Found 4 errors. Watching for file changes.
-
-[2J[3J[H[[90m16:22:02[0m] File change detected. Starting incremental compilation...
-
-[96msrc/integrations/tiny/tiny-config.service.ts[0m:[93m19[0m:[93m24[0m - [91merror[0m[90m TS2339: [0mProperty 'tinyIntegrationConfig' does not exist on type 'PrismaService'.
-
-[7m19[0m     return this.prisma.tinyIntegrationConfig.upsert({
-[7m  [0m [91m                       ~~~~~~~~~~~~~~~~~~~~~[0m
-
-[96msrc/integrations/tiny/tiny-config.service.ts[0m:[93m40[0m:[93m24[0m - [91merror[0m[90m TS2339: [0mProperty 'tinyIntegrationConfig' does not exist on type 'PrismaService'.
-
-[7m40[0m     return this.prisma.tinyIntegrationConfig.findMany({
-[7m  [0m [91m                       ~~~~~~~~~~~~~~~~~~~~~[0m
-
-[96msrc/integrations/tiny/tiny-config.service.ts[0m:[93m46[0m:[93m24[0m - [91merror[0m[90m TS2339: [0mProperty 'tinyIntegrationConfig' does not exist on type 'PrismaService'.
-
-[7m46[0m     return this.prisma.tinyIntegrationConfig.update({
-[7m  [0m [91m                       ~~~~~~~~~~~~~~~~~~~~~[0m
-
-[96msrc/integrations/tiny/tiny-config.service.ts[0m:[93m56[0m:[93m24[0m - [91merror[0m[90m TS2339: [0mProperty 'tinyIntegrationConfig' does not exist on type 'PrismaService'.
-
-[7m56[0m     return this.prisma.tinyIntegrationConfig.findUnique({
-[7m  [0m [91m                       ~~~~~~~~~~~~~~~~~~~~~[0m
-
-[[90m16:22:02[0m] Found 4 errors. Watching for file changes.
-
-[2J[3J[H[[90m16:22:32[0m] File change detected. Starting incremental compilation...
-
-[96msrc/integrations/tiny/tiny-config.service.ts[0m:[93m19[0m:[93m24[0m - [91merror[0m[90m TS2339: [0mProperty 'tinyIntegrationConfig' does not exist on type 'PrismaService'.
-
-[7m19[0m     return this.prisma.tinyIntegrationConfig.upsert({
-[7m  [0m [91m                       ~~~~~~~~~~~~~~~~~~~~~[0m
-
-[96msrc/integrations/tiny/tiny-config.service.ts[0m:[93m40[0m:[93m24[0m - [91merror[0m[90m TS2339: [0mProperty 'tinyIntegrationConfig' does not exist on type 'PrismaService'.
-
-[7m40[0m     return this.prisma.tinyIntegrationConfig.findMany({
-[7m  [0m [91m                       ~~~~~~~~~~~~~~~~~~~~~[0m
-
-[96msrc/integrations/tiny/tiny-config.service.ts[0m:[93m46[0m:[93m38[0m - [91merror[0m[90m TS2339: [0mProperty 'tinyIntegrationConfig' does not exist on type 'PrismaService'.
-
-[7m46[0m     const config = await this.prisma.tinyIntegrationConfig.findUnique({
-[7m  [0m [91m                                     ~~~~~~~~~~~~~~~~~~~~~[0m
-
-[96msrc/integrations/tiny/tiny-config.service.ts[0m:[93m51[0m:[93m24[0m - [91merror[0m[90m TS2339: [0mProperty 'tinyIntegrationConfig' does not exist on type 'PrismaService'.
-
-[7m51[0m     return this.prisma.tinyIntegrationConfig.update({
-[7m  [0m [91m                       ~~~~~~~~~~~~~~~~~~~~~[0m
-
-[96msrc/integrations/tiny/tiny-config.service.ts[0m:[93m61[0m:[93m24[0m - [91merror[0m[90m TS2339: [0mProperty 'tinyIntegrationConfig' does not exist on type 'PrismaService'.
-
-[7m61[0m     return this.prisma.tinyIntegrationConfig.findUnique({
-[7m  [0m [91m                       ~~~~~~~~~~~~~~~~~~~~~[0m
-
-[[90m16:22:32[0m] Found 5 errors. Watching for file changes.
-
-[2J[3J[H[[90m16:22:48[0m] File change detected. Starting incremental compilation...
-
-[96msrc/integrations/tiny/tiny-config.service.ts[0m:[93m19[0m:[93m24[0m - [91merror[0m[90m TS2339: [0mProperty 'tinyIntegrationConfig' does not exist on type 'PrismaService'.
-
-[7m19[0m     return this.prisma.tinyIntegrationConfig.upsert({
-[7m  [0m [91m                       ~~~~~~~~~~~~~~~~~~~~~[0m
-
-[96msrc/integrations/tiny/tiny-config.service.ts[0m:[93m40[0m:[93m24[0m - [91merror[0m[90m TS2339: [0mProperty 'tinyIntegrationConfig' does not exist on type 'PrismaService'.
-
-[7m40[0m     return this.prisma.tinyIntegrationConfig.findMany({
-[7m  [0m [91m                       ~~~~~~~~~~~~~~~~~~~~~[0m
-
-[96msrc/integrations/tiny/tiny-config.service.ts[0m:[93m46[0m:[93m38[0m - [91merror[0m[90m TS2339: [0mProperty 'tinyIntegrationConfig' does not exist on type 'PrismaService'.
-
-[7m46[0m     const config = await this.prisma.tinyIntegrationConfig.findUnique({
-[7m  [0m [91m                                     ~~~~~~~~~~~~~~~~~~~~~[0m
-
-[96msrc/integrations/tiny/tiny-config.service.ts[0m:[93m51[0m:[93m24[0m - [91merror[0m[90m TS2339: [0mProperty 'tinyIntegrationConfig' does not exist on type 'PrismaService'.
-
-[7m51[0m     return this.prisma.tinyIntegrationConfig.update({
-[7m  [0m [91m                       ~~~~~~~~~~~~~~~~~~~~~[0m
-
-[96msrc/integrations/tiny/tiny-config.service.ts[0m:[93m61[0m:[93m24[0m - [91merror[0m[90m TS2339: [0mProperty 'tinyIntegrationConfig' does not exist on type 'PrismaService'.
-
-[7m61[0m     return this.prisma.tinyIntegrationConfig.findUnique({
-[7m  [0m [91m                       ~~~~~~~~~~~~~~~~~~~~~[0m
-
-[[90m16:22:48[0m] Found 5 errors. Watching for file changes.
-
-[2J[3J[H[[90m16:25:20[0m] File change detected. Starting incremental compilation...
-
-[96msrc/integrations/tiny/tiny.controller.ts[0m:[93m54[0m:[93m7[0m - [91merror[0m[90m TS2322: [0mType 'string[] | undefined' is not assignable to type 'TinyModuleKind[] | undefined'.
-  Type 'string[]' is not assignable to type 'TinyModuleKind[]'.
-    Type 'string' is not assignable to type 'TinyModuleKind'.
-
-[7m54[0m       modules: body.modules ?? existingConfig?.modules,
-[7m  [0m [91m      ~~~~~~~[0m
-
-  [96msrc/integrations/tiny/tiny.service.ts[0m:[93m16[0m:[93m3[0m
-    [7m16[0m   modules?: TinyModuleKind[];
-    [7m  [0m [96m  ~~~~~~~[0m
-    The expected type comes from property 'modules' which is declared here on type 'TinySyncOptions'
-
-[[90m16:25:20[0m] Found 1 error. Watching for file changes.
-
-[2J[3J[H[[90m16:25:52[0m] File change detected. Starting incremental compilation...
-
-[[90m16:25:52[0m] Found 0 errors. Watching for file changes.
-
-[32m[Nest] 2986891  - [39m14/10/2025, 16:25:53 [32m    LOG[39m [38;5;3m[NestFactory] [39m[32mStarting Nest application...[39m
-[32m[Nest] 2986891  - [39m14/10/2025, 16:25:53 [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mPrismaModule dependencies initialized[39m[38;5;3m +9ms[39m
-[32m[Nest] 2986891  - [39m14/10/2025, 16:25:53 [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mAppModule dependencies initialized[39m[38;5;3m +0ms[39m
-[32m[Nest] 2986891  - [39m14/10/2025, 16:25:53 [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mDREModule dependencies initialized[39m[38;5;3m +1ms[39m
-[32m[Nest] 2986891  - [39m14/10/2025, 16:25:53 [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mTinyModule dependencies initialized[39m[38;5;3m +0ms[39m
-[32m[Nest] 2986891  - [39m14/10/2025, 16:25:53 [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mImportModule dependencies initialized[39m[38;5;3m +0ms[39m
-[32m[Nest] 2986891  - [39m14/10/2025, 16:25:53 [32m    LOG[39m [38;5;3m[RoutesResolver] [39m[32mAppController {/v1}:[39m[38;5;3m +4ms[39m
-[32m[Nest] 2986891  - [39m14/10/2025, 16:25:53 [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/v1, GET} route[39m[38;5;3m +2ms[39m
-[32m[Nest] 2986891  - [39m14/10/2025, 16:25:53 [32m    LOG[39m [38;5;3m[RoutesResolver] [39m[32mDREController {/v1/dre}:[39m[38;5;3m +0ms[39m
-[32m[Nest] 2986891  - [39m14/10/2025, 16:25:53 [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/v1/dre, GET} route[39m[38;5;3m +1ms[39m
-[32m[Nest] 2986891  - [39m14/10/2025, 16:25:53 [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/v1/dre/filters, GET} route[39m[38;5;3m +0ms[39m
-[32m[Nest] 2986891  - [39m14/10/2025, 16:25:53 [32m    LOG[39m [38;5;3m[RoutesResolver] [39m[32mImportController {/v1/tenants/:id/import}:[39m[38;5;3m +0ms[39m
-[32m[Nest] 2986891  - [39m14/10/2025, 16:25:53 [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/v1/tenants/:id/import, POST} route[39m[38;5;3m +1ms[39m
-[32m[Nest] 2986891  - [39m14/10/2025, 16:25:53 [32m    LOG[39m [38;5;3m[RoutesResolver] [39m[32mTinyController {/v1/tenants/:tenantId/tiny}:[39m[38;5;3m +0ms[39m
-[32m[Nest] 2986891  - [39m14/10/2025, 16:25:53 [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/v1/tenants/:tenantId/tiny/sync, POST} route[39m[38;5;3m +0ms[39m
-[32m[Nest] 2986891  - [39m14/10/2025, 16:25:53 [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/v1/tenants/:tenantId/tiny/config, POST} route[39m[38;5;3m +0ms[39m
-[32m[Nest] 2986891  - [39m14/10/2025, 16:25:53 [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/v1/tenants/:tenantId/tiny/status, GET} route[39m[38;5;3m +1ms[39m
-[32m[Nest] 2986891  - [39m14/10/2025, 16:25:53 [32m    LOG[39m [38;5;3m[NestApplication] [39m[32mNest application successfully started[39m[38;5;3m +48ms[39m
-API on http://localhost:4000/v1
-[31m[Nest] 2986891  - [39m14/10/2025, 16:25:53 [31m  ERROR[39m [38;5;3m[TinySchedulerService] [39m[31mErro ao rodar ciclo inicial do Tiny Scheduler[39m
+Raw query failed. Code: `42883`. Message: `ERROR: operator does not exist: "PCGType" = text
+HINT: No operator matches the given name and argument types. You might need to add explicit type casts.`[39m
 PrismaClientKnownRequestError: 
-Invalid `this.prisma.tinyIntegrationConfig.findMany()` invocation in
-/media/dev/Servidor/sistema-dre/apps/api/dist/integrations/tiny/tiny-config.service.js:41:50
+Invalid `prisma.$queryRaw()` invocation:
 
-  38     });
-  39 }
-  40 findAllEnabled() {
-→ 41     return this.prisma.tinyIntegrationConfig.findMany(
-The table `public.TinyIntegrationConfig` does not exist in the current database.
+
+Raw query failed. Code: `42883`. Message: `ERROR: operator does not exist: "PCGType" = text
+HINT: No operator matches the given name and argument types. You might need to add explicit type casts.`
     at $n.handleRequestError (/media/dev/Servidor/sistema-dre/node_modules/.pnpm/@prisma+client@5.22.0_prisma@5.22.0/node_modules/@prisma/client/runtime/library.js:121:7315)
     at $n.handleAndLogRequestError (/media/dev/Servidor/sistema-dre/node_modules/.pnpm/@prisma+client@5.22.0_prisma@5.22.0/node_modules/@prisma/client/runtime/library.js:121:6623)
     at $n.request (/media/dev/Servidor/sistema-dre/node_modules/.pnpm/@prisma+client@5.22.0_prisma@5.22.0/node_modules/@prisma/client/runtime/library.js:121:6307)
     at async l (/media/dev/Servidor/sistema-dre/node_modules/.pnpm/@prisma+client@5.22.0_prisma@5.22.0/node_modules/@prisma/client/runtime/library.js:130:9633)
-    at async TinySchedulerService.runCycle (/media/dev/Servidor/sistema-dre/apps/api/dist/integrations/tiny/tiny.scheduler.js:35:25)
-[2J[3J[H[[90m16:29:28[0m] File change detected. Starting incremental compilation...
+    at async DREService.compute (/media/dev/Servidor/sistema-dre/apps/api/dist/dre/dre.service.js:63:22)
+    at async /media/dev/Servidor/sistema-dre/node_modules/.pnpm/@nestjs+core@10.4.20_@nestjs+common@10.4.20_reflect-metadata@0.2.2_rxjs@7.8.2__@nestjs+_1031b346502275d0fd746cdba7b0b7f6/node_modules/@nestjs/core/router/router-execution-context.js:46:28
+    at async /media/dev/Servidor/sistema-dre/node_modules/.pnpm/@nestjs+core@10.4.20_@nestjs+common@10.4.20_reflect-metadata@0.2.2_rxjs@7.8.2__@nestjs+_1031b346502275d0fd746cdba7b0b7f6/node_modules/@nestjs/core/router/router-proxy.js:9:17
+[31m[Nest] 3165685  - [39m14/10/2025, 17:45:47 [31m  ERROR[39m [38;5;3m[ExceptionsHandler] [39m[31m
+Invalid `prisma.$queryRaw()` invocation:
 
-[[90m16:29:28[0m] Found 0 errors. Watching for file changes.
 
-[32m[Nest] 2995017  - [39m14/10/2025, 16:29:29 [32m    LOG[39m [38;5;3m[NestFactory] [39m[32mStarting Nest application...[39m
-[32m[Nest] 2995017  - [39m14/10/2025, 16:29:29 [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mPrismaModule dependencies initialized[39m[38;5;3m +10ms[39m
-[32m[Nest] 2995017  - [39m14/10/2025, 16:29:29 [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mAppModule dependencies initialized[39m[38;5;3m +0ms[39m
-[32m[Nest] 2995017  - [39m14/10/2025, 16:29:29 [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mDREModule dependencies initialized[39m[38;5;3m +1ms[39m
-[32m[Nest] 2995017  - [39m14/10/2025, 16:29:29 [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mTinyModule dependencies initialized[39m[38;5;3m +0ms[39m
-[32m[Nest] 2995017  - [39m14/10/2025, 16:29:29 [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mImportModule dependencies initialized[39m[38;5;3m +0ms[39m
-[32m[Nest] 2995017  - [39m14/10/2025, 16:29:29 [32m    LOG[39m [38;5;3m[RoutesResolver] [39m[32mAppController {/v1}:[39m[38;5;3m +3ms[39m
-[32m[Nest] 2995017  - [39m14/10/2025, 16:29:29 [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/v1, GET} route[39m[38;5;3m +2ms[39m
-[32m[Nest] 2995017  - [39m14/10/2025, 16:29:29 [32m    LOG[39m [38;5;3m[RoutesResolver] [39m[32mDREController {/v1/dre}:[39m[38;5;3m +0ms[39m
-[32m[Nest] 2995017  - [39m14/10/2025, 16:29:29 [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/v1/dre, GET} route[39m[38;5;3m +1ms[39m
-[32m[Nest] 2995017  - [39m14/10/2025, 16:29:29 [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/v1/dre/filters, GET} route[39m[38;5;3m +0ms[39m
-[32m[Nest] 2995017  - [39m14/10/2025, 16:29:29 [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/v1/dre/export, GET} route[39m[38;5;3m +0ms[39m
-[32m[Nest] 2995017  - [39m14/10/2025, 16:29:29 [32m    LOG[39m [38;5;3m[RoutesResolver] [39m[32mImportController {/v1/tenants/:id/import}:[39m[38;5;3m +0ms[39m
-[32m[Nest] 2995017  - [39m14/10/2025, 16:29:29 [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/v1/tenants/:id/import, POST} route[39m[38;5;3m +1ms[39m
-[32m[Nest] 2995017  - [39m14/10/2025, 16:29:29 [32m    LOG[39m [38;5;3m[RoutesResolver] [39m[32mTinyController {/v1/tenants/:tenantId/tiny}:[39m[38;5;3m +0ms[39m
-[32m[Nest] 2995017  - [39m14/10/2025, 16:29:29 [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/v1/tenants/:tenantId/tiny/sync, POST} route[39m[38;5;3m +0ms[39m
-[32m[Nest] 2995017  - [39m14/10/2025, 16:29:29 [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/v1/tenants/:tenantId/tiny/config, POST} route[39m[38;5;3m +0ms[39m
-[32m[Nest] 2995017  - [39m14/10/2025, 16:29:29 [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/v1/tenants/:tenantId/tiny/status, GET} route[39m[38;5;3m +0ms[39m
-[32m[Nest] 2995017  - [39m14/10/2025, 16:29:29 [32m    LOG[39m [38;5;3m[NestApplication] [39m[32mNest application successfully started[39m[38;5;3m +41ms[39m
+Raw query failed. Code: `42883`. Message: `ERROR: operator does not exist: "PCGType" = text
+HINT: No operator matches the given name and argument types. You might need to add explicit type casts.`[39m
+PrismaClientKnownRequestError: 
+Invalid `prisma.$queryRaw()` invocation:
+
+
+Raw query failed. Code: `42883`. Message: `ERROR: operator does not exist: "PCGType" = text
+HINT: No operator matches the given name and argument types. You might need to add explicit type casts.`
+    at $n.handleRequestError (/media/dev/Servidor/sistema-dre/node_modules/.pnpm/@prisma+client@5.22.0_prisma@5.22.0/node_modules/@prisma/client/runtime/library.js:121:7315)
+    at $n.handleAndLogRequestError (/media/dev/Servidor/sistema-dre/node_modules/.pnpm/@prisma+client@5.22.0_prisma@5.22.0/node_modules/@prisma/client/runtime/library.js:121:6623)
+    at $n.request (/media/dev/Servidor/sistema-dre/node_modules/.pnpm/@prisma+client@5.22.0_prisma@5.22.0/node_modules/@prisma/client/runtime/library.js:121:6307)
+    at async l (/media/dev/Servidor/sistema-dre/node_modules/.pnpm/@prisma+client@5.22.0_prisma@5.22.0/node_modules/@prisma/client/runtime/library.js:130:9633)
+    at async DREService.compute (/media/dev/Servidor/sistema-dre/apps/api/dist/dre/dre.service.js:63:22)
+    at async /media/dev/Servidor/sistema-dre/node_modules/.pnpm/@nestjs+core@10.4.20_@nestjs+common@10.4.20_reflect-metadata@0.2.2_rxjs@7.8.2__@nestjs+_1031b346502275d0fd746cdba7b0b7f6/node_modules/@nestjs/core/router/router-execution-context.js:46:28
+    at async /media/dev/Servidor/sistema-dre/node_modules/.pnpm/@nestjs+core@10.4.20_@nestjs+common@10.4.20_reflect-metadata@0.2.2_rxjs@7.8.2__@nestjs+_1031b346502275d0fd746cdba7b0b7f6/node_modules/@nestjs/core/router/router-proxy.js:9:17
+[31m[Nest] 3165685  - [39m14/10/2025, 17:45:48 [31m  ERROR[39m [38;5;3m[ExceptionsHandler] [39m[31m
+Invalid `prisma.$queryRaw()` invocation:
+
+
+Raw query failed. Code: `42883`. Message: `ERROR: operator does not exist: "PCGType" = text
+HINT: No operator matches the given name and argument types. You might need to add explicit type casts.`[39m
+PrismaClientKnownRequestError: 
+Invalid `prisma.$queryRaw()` invocation:
+
+
+Raw query failed. Code: `42883`. Message: `ERROR: operator does not exist: "PCGType" = text
+HINT: No operator matches the given name and argument types. You might need to add explicit type casts.`
+    at $n.handleRequestError (/media/dev/Servidor/sistema-dre/node_modules/.pnpm/@prisma+client@5.22.0_prisma@5.22.0/node_modules/@prisma/client/runtime/library.js:121:7315)
+    at $n.handleAndLogRequestError (/media/dev/Servidor/sistema-dre/node_modules/.pnpm/@prisma+client@5.22.0_prisma@5.22.0/node_modules/@prisma/client/runtime/library.js:121:6623)
+    at $n.request (/media/dev/Servidor/sistema-dre/node_modules/.pnpm/@prisma+client@5.22.0_prisma@5.22.0/node_modules/@prisma/client/runtime/library.js:121:6307)
+    at async l (/media/dev/Servidor/sistema-dre/node_modules/.pnpm/@prisma+client@5.22.0_prisma@5.22.0/node_modules/@prisma/client/runtime/library.js:130:9633)
+    at async DREService.compute (/media/dev/Servidor/sistema-dre/apps/api/dist/dre/dre.service.js:63:22)
+    at async /media/dev/Servidor/sistema-dre/node_modules/.pnpm/@nestjs+core@10.4.20_@nestjs+common@10.4.20_reflect-metadata@0.2.2_rxjs@7.8.2__@nestjs+_1031b346502275d0fd746cdba7b0b7f6/node_modules/@nestjs/core/router/router-execution-context.js:46:28
+    at async /media/dev/Servidor/sistema-dre/node_modules/.pnpm/@nestjs+core@10.4.20_@nestjs+common@10.4.20_reflect-metadata@0.2.2_rxjs@7.8.2__@nestjs+_1031b346502275d0fd746cdba7b0b7f6/node_modules/@nestjs/core/router/router-proxy.js:9:17
+[31m[Nest] 3165685  - [39m14/10/2025, 17:45:48 [31m  ERROR[39m [38;5;3m[ExceptionsHandler] [39m[31m
+Invalid `prisma.$queryRaw()` invocation:
+
+
+Raw query failed. Code: `42883`. Message: `ERROR: operator does not exist: "PCGType" = text
+HINT: No operator matches the given name and argument types. You might need to add explicit type casts.`[39m
+PrismaClientKnownRequestError: 
+Invalid `prisma.$queryRaw()` invocation:
+
+
+Raw query failed. Code: `42883`. Message: `ERROR: operator does not exist: "PCGType" = text
+HINT: No operator matches the given name and argument types. You might need to add explicit type casts.`
+    at $n.handleRequestError (/media/dev/Servidor/sistema-dre/node_modules/.pnpm/@prisma+client@5.22.0_prisma@5.22.0/node_modules/@prisma/client/runtime/library.js:121:7315)
+    at $n.handleAndLogRequestError (/media/dev/Servidor/sistema-dre/node_modules/.pnpm/@prisma+client@5.22.0_prisma@5.22.0/node_modules/@prisma/client/runtime/library.js:121:6623)
+    at $n.request (/media/dev/Servidor/sistema-dre/node_modules/.pnpm/@prisma+client@5.22.0_prisma@5.22.0/node_modules/@prisma/client/runtime/library.js:121:6307)
+    at async l (/media/dev/Servidor/sistema-dre/node_modules/.pnpm/@prisma+client@5.22.0_prisma@5.22.0/node_modules/@prisma/client/runtime/library.js:130:9633)
+    at async DREService.compute (/media/dev/Servidor/sistema-dre/apps/api/dist/dre/dre.service.js:63:22)
+    at async /media/dev/Servidor/sistema-dre/node_modules/.pnpm/@nestjs+core@10.4.20_@nestjs+common@10.4.20_reflect-metadata@0.2.2_rxjs@7.8.2__@nestjs+_1031b346502275d0fd746cdba7b0b7f6/node_modules/@nestjs/core/router/router-execution-context.js:46:28
+    at async /media/dev/Servidor/sistema-dre/node_modules/.pnpm/@nestjs+core@10.4.20_@nestjs+common@10.4.20_reflect-metadata@0.2.2_rxjs@7.8.2__@nestjs+_1031b346502275d0fd746cdba7b0b7f6/node_modules/@nestjs/core/router/router-proxy.js:9:17
+[31m[Nest] 3165685  - [39m14/10/2025, 17:45:49 [31m  ERROR[39m [38;5;3m[ExceptionsHandler] [39m[31m
+Invalid `prisma.$queryRaw()` invocation:
+
+
+Raw query failed. Code: `42883`. Message: `ERROR: operator does not exist: "PCGType" = text
+HINT: No operator matches the given name and argument types. You might need to add explicit type casts.`[39m
+PrismaClientKnownRequestError: 
+Invalid `prisma.$queryRaw()` invocation:
+
+
+Raw query failed. Code: `42883`. Message: `ERROR: operator does not exist: "PCGType" = text
+HINT: No operator matches the given name and argument types. You might need to add explicit type casts.`
+    at $n.handleRequestError (/media/dev/Servidor/sistema-dre/node_modules/.pnpm/@prisma+client@5.22.0_prisma@5.22.0/node_modules/@prisma/client/runtime/library.js:121:7315)
+    at $n.handleAndLogRequestError (/media/dev/Servidor/sistema-dre/node_modules/.pnpm/@prisma+client@5.22.0_prisma@5.22.0/node_modules/@prisma/client/runtime/library.js:121:6623)
+    at $n.request (/media/dev/Servidor/sistema-dre/node_modules/.pnpm/@prisma+client@5.22.0_prisma@5.22.0/node_modules/@prisma/client/runtime/library.js:121:6307)
+    at async l (/media/dev/Servidor/sistema-dre/node_modules/.pnpm/@prisma+client@5.22.0_prisma@5.22.0/node_modules/@prisma/client/runtime/library.js:130:9633)
+    at async DREService.compute (/media/dev/Servidor/sistema-dre/apps/api/dist/dre/dre.service.js:63:22)
+    at async /media/dev/Servidor/sistema-dre/node_modules/.pnpm/@nestjs+core@10.4.20_@nestjs+common@10.4.20_reflect-metadata@0.2.2_rxjs@7.8.2__@nestjs+_1031b346502275d0fd746cdba7b0b7f6/node_modules/@nestjs/core/router/router-execution-context.js:46:28
+    at async /media/dev/Servidor/sistema-dre/node_modules/.pnpm/@nestjs+core@10.4.20_@nestjs+common@10.4.20_reflect-metadata@0.2.2_rxjs@7.8.2__@nestjs+_1031b346502275d0fd746cdba7b0b7f6/node_modules/@nestjs/core/router/router-proxy.js:9:17
+[31m[Nest] 3165685  - [39m14/10/2025, 17:45:49 [31m  ERROR[39m [38;5;3m[ExceptionsHandler] [39m[31m
+Invalid `prisma.$queryRaw()` invocation:
+
+
+Raw query failed. Code: `42883`. Message: `ERROR: operator does not exist: "PCGType" = text
+HINT: No operator matches the given name and argument types. You might need to add explicit type casts.`[39m
+PrismaClientKnownRequestError: 
+Invalid `prisma.$queryRaw()` invocation:
+
+
+Raw query failed. Code: `42883`. Message: `ERROR: operator does not exist: "PCGType" = text
+HINT: No operator matches the given name and argument types. You might need to add explicit type casts.`
+    at $n.handleRequestError (/media/dev/Servidor/sistema-dre/node_modules/.pnpm/@prisma+client@5.22.0_prisma@5.22.0/node_modules/@prisma/client/runtime/library.js:121:7315)
+    at $n.handleAndLogRequestError (/media/dev/Servidor/sistema-dre/node_modules/.pnpm/@prisma+client@5.22.0_prisma@5.22.0/node_modules/@prisma/client/runtime/library.js:121:6623)
+    at $n.request (/media/dev/Servidor/sistema-dre/node_modules/.pnpm/@prisma+client@5.22.0_prisma@5.22.0/node_modules/@prisma/client/runtime/library.js:121:6307)
+    at async l (/media/dev/Servidor/sistema-dre/node_modules/.pnpm/@prisma+client@5.22.0_prisma@5.22.0/node_modules/@prisma/client/runtime/library.js:130:9633)
+    at async DREService.compute (/media/dev/Servidor/sistema-dre/apps/api/dist/dre/dre.service.js:63:22)
+    at async /media/dev/Servidor/sistema-dre/node_modules/.pnpm/@nestjs+core@10.4.20_@nestjs+common@10.4.20_reflect-metadata@0.2.2_rxjs@7.8.2__@nestjs+_1031b346502275d0fd746cdba7b0b7f6/node_modules/@nestjs/core/router/router-execution-context.js:46:28
+    at async /media/dev/Servidor/sistema-dre/node_modules/.pnpm/@nestjs+core@10.4.20_@nestjs+common@10.4.20_reflect-metadata@0.2.2_rxjs@7.8.2__@nestjs+_1031b346502275d0fd746cdba7b0b7f6/node_modules/@nestjs/core/router/router-proxy.js:9:17
+[31m[Nest] 3165685  - [39m14/10/2025, 17:45:50 [31m  ERROR[39m [38;5;3m[ExceptionsHandler] [39m[31m
+Invalid `prisma.$queryRaw()` invocation:
+
+
+Raw query failed. Code: `42883`. Message: `ERROR: operator does not exist: "PCGType" = text
+HINT: No operator matches the given name and argument types. You might need to add explicit type casts.`[39m
+PrismaClientKnownRequestError: 
+Invalid `prisma.$queryRaw()` invocation:
+
+
+Raw query failed. Code: `42883`. Message: `ERROR: operator does not exist: "PCGType" = text
+HINT: No operator matches the given name and argument types. You might need to add explicit type casts.`
+    at $n.handleRequestError (/media/dev/Servidor/sistema-dre/node_modules/.pnpm/@prisma+client@5.22.0_prisma@5.22.0/node_modules/@prisma/client/runtime/library.js:121:7315)
+    at $n.handleAndLogRequestError (/media/dev/Servidor/sistema-dre/node_modules/.pnpm/@prisma+client@5.22.0_prisma@5.22.0/node_modules/@prisma/client/runtime/library.js:121:6623)
+    at $n.request (/media/dev/Servidor/sistema-dre/node_modules/.pnpm/@prisma+client@5.22.0_prisma@5.22.0/node_modules/@prisma/client/runtime/library.js:121:6307)
+    at async l (/media/dev/Servidor/sistema-dre/node_modules/.pnpm/@prisma+client@5.22.0_prisma@5.22.0/node_modules/@prisma/client/runtime/library.js:130:9633)
+    at async DREService.compute (/media/dev/Servidor/sistema-dre/apps/api/dist/dre/dre.service.js:63:22)
+    at async /media/dev/Servidor/sistema-dre/node_modules/.pnpm/@nestjs+core@10.4.20_@nestjs+common@10.4.20_reflect-metadata@0.2.2_rxjs@7.8.2__@nestjs+_1031b346502275d0fd746cdba7b0b7f6/node_modules/@nestjs/core/router/router-execution-context.js:46:28
+    at async /media/dev/Servidor/sistema-dre/node_modules/.pnpm/@nestjs+core@10.4.20_@nestjs+common@10.4.20_reflect-metadata@0.2.2_rxjs@7.8.2__@nestjs+_1031b346502275d0fd746cdba7b0b7f6/node_modules/@nestjs/core/router/router-proxy.js:9:17
+[31m[Nest] 3165685  - [39m14/10/2025, 17:45:50 [31m  ERROR[39m [38;5;3m[ExceptionsHandler] [39m[31m
+Invalid `prisma.$queryRaw()` invocation:
+
+
+Raw query failed. Code: `42883`. Message: `ERROR: operator does not exist: "PCGType" = text
+HINT: No operator matches the given name and argument types. You might need to add explicit type casts.`[39m
+PrismaClientKnownRequestError: 
+Invalid `prisma.$queryRaw()` invocation:
+
+
+Raw query failed. Code: `42883`. Message: `ERROR: operator does not exist: "PCGType" = text
+HINT: No operator matches the given name and argument types. You might need to add explicit type casts.`
+    at $n.handleRequestError (/media/dev/Servidor/sistema-dre/node_modules/.pnpm/@prisma+client@5.22.0_prisma@5.22.0/node_modules/@prisma/client/runtime/library.js:121:7315)
+    at $n.handleAndLogRequestError (/media/dev/Servidor/sistema-dre/node_modules/.pnpm/@prisma+client@5.22.0_prisma@5.22.0/node_modules/@prisma/client/runtime/library.js:121:6623)
+    at $n.request (/media/dev/Servidor/sistema-dre/node_modules/.pnpm/@prisma+client@5.22.0_prisma@5.22.0/node_modules/@prisma/client/runtime/library.js:121:6307)
+    at async l (/media/dev/Servidor/sistema-dre/node_modules/.pnpm/@prisma+client@5.22.0_prisma@5.22.0/node_modules/@prisma/client/runtime/library.js:130:9633)
+    at async DREService.compute (/media/dev/Servidor/sistema-dre/apps/api/dist/dre/dre.service.js:63:22)
+    at async /media/dev/Servidor/sistema-dre/node_modules/.pnpm/@nestjs+core@10.4.20_@nestjs+common@10.4.20_reflect-metadata@0.2.2_rxjs@7.8.2__@nestjs+_1031b346502275d0fd746cdba7b0b7f6/node_modules/@nestjs/core/router/router-execution-context.js:46:28
+    at async /media/dev/Servidor/sistema-dre/node_modules/.pnpm/@nestjs+core@10.4.20_@nestjs+common@10.4.20_reflect-metadata@0.2.2_rxjs@7.8.2__@nestjs+_1031b346502275d0fd746cdba7b0b7f6/node_modules/@nestjs/core/router/router-proxy.js:9:17
+[31m[Nest] 3165685  - [39m14/10/2025, 17:45:51 [31m  ERROR[39m [38;5;3m[ExceptionsHandler] [39m[31m
+Invalid `prisma.$queryRaw()` invocation:
+
+
+Raw query failed. Code: `42883`. Message: `ERROR: operator does not exist: "PCGType" = text
+HINT: No operator matches the given name and argument types. You might need to add explicit type casts.`[39m
+PrismaClientKnownRequestError: 
+Invalid `prisma.$queryRaw()` invocation:
+
+
+Raw query failed. Code: `42883`. Message: `ERROR: operator does not exist: "PCGType" = text
+HINT: No operator matches the given name and argument types. You might need to add explicit type casts.`
+    at $n.handleRequestError (/media/dev/Servidor/sistema-dre/node_modules/.pnpm/@prisma+client@5.22.0_prisma@5.22.0/node_modules/@prisma/client/runtime/library.js:121:7315)
+    at $n.handleAndLogRequestError (/media/dev/Servidor/sistema-dre/node_modules/.pnpm/@prisma+client@5.22.0_prisma@5.22.0/node_modules/@prisma/client/runtime/library.js:121:6623)
+    at $n.request (/media/dev/Servidor/sistema-dre/node_modules/.pnpm/@prisma+client@5.22.0_prisma@5.22.0/node_modules/@prisma/client/runtime/library.js:121:6307)
+    at async l (/media/dev/Servidor/sistema-dre/node_modules/.pnpm/@prisma+client@5.22.0_prisma@5.22.0/node_modules/@prisma/client/runtime/library.js:130:9633)
+    at async DREService.compute (/media/dev/Servidor/sistema-dre/apps/api/dist/dre/dre.service.js:63:22)
+    at async /media/dev/Servidor/sistema-dre/node_modules/.pnpm/@nestjs+core@10.4.20_@nestjs+common@10.4.20_reflect-metadata@0.2.2_rxjs@7.8.2__@nestjs+_1031b346502275d0fd746cdba7b0b7f6/node_modules/@nestjs/core/router/router-execution-context.js:46:28
+    at async /media/dev/Servidor/sistema-dre/node_modules/.pnpm/@nestjs+core@10.4.20_@nestjs+common@10.4.20_reflect-metadata@0.2.2_rxjs@7.8.2__@nestjs+_1031b346502275d0fd746cdba7b0b7f6/node_modules/@nestjs/core/router/router-proxy.js:9:17
+[31m[Nest] 3165685  - [39m14/10/2025, 17:46:15 [31m  ERROR[39m [38;5;3m[ExceptionsHandler] [39m[31m
+Invalid `prisma.$queryRaw()` invocation:
+
+
+Raw query failed. Code: `42883`. Message: `ERROR: operator does not exist: "PCGType" = text
+HINT: No operator matches the given name and argument types. You might need to add explicit type casts.`[39m
+PrismaClientKnownRequestError: 
+Invalid `prisma.$queryRaw()` invocation:
+
+
+Raw query failed. Code: `42883`. Message: `ERROR: operator does not exist: "PCGType" = text
+HINT: No operator matches the given name and argument types. You might need to add explicit type casts.`
+    at $n.handleRequestError (/media/dev/Servidor/sistema-dre/node_modules/.pnpm/@prisma+client@5.22.0_prisma@5.22.0/node_modules/@prisma/client/runtime/library.js:121:7315)
+    at $n.handleAndLogRequestError (/media/dev/Servidor/sistema-dre/node_modules/.pnpm/@prisma+client@5.22.0_prisma@5.22.0/node_modules/@prisma/client/runtime/library.js:121:6623)
+    at $n.request (/media/dev/Servidor/sistema-dre/node_modules/.pnpm/@prisma+client@5.22.0_prisma@5.22.0/node_modules/@prisma/client/runtime/library.js:121:6307)
+    at async l (/media/dev/Servidor/sistema-dre/node_modules/.pnpm/@prisma+client@5.22.0_prisma@5.22.0/node_modules/@prisma/client/runtime/library.js:130:9633)
+    at async DREService.compute (/media/dev/Servidor/sistema-dre/apps/api/dist/dre/dre.service.js:63:22)
+    at async /media/dev/Servidor/sistema-dre/node_modules/.pnpm/@nestjs+core@10.4.20_@nestjs+common@10.4.20_reflect-metadata@0.2.2_rxjs@7.8.2__@nestjs+_1031b346502275d0fd746cdba7b0b7f6/node_modules/@nestjs/core/router/router-execution-context.js:46:28
+    at async /media/dev/Servidor/sistema-dre/node_modules/.pnpm/@nestjs+core@10.4.20_@nestjs+common@10.4.20_reflect-metadata@0.2.2_rxjs@7.8.2__@nestjs+_1031b346502275d0fd746cdba7b0b7f6/node_modules/@nestjs/core/router/router-proxy.js:9:17
+[31m[Nest] 3165685  - [39m14/10/2025, 17:46:15 [31m  ERROR[39m [38;5;3m[ExceptionsHandler] [39m[31m
+Invalid `prisma.$queryRaw()` invocation:
+
+
+Raw query failed. Code: `42883`. Message: `ERROR: operator does not exist: "PCGType" = text
+HINT: No operator matches the given name and argument types. You might need to add explicit type casts.`[39m
+PrismaClientKnownRequestError: 
+Invalid `prisma.$queryRaw()` invocation:
+
+
+Raw query failed. Code: `42883`. Message: `ERROR: operator does not exist: "PCGType" = text
+HINT: No operator matches the given name and argument types. You might need to add explicit type casts.`
+    at $n.handleRequestError (/media/dev/Servidor/sistema-dre/node_modules/.pnpm/@prisma+client@5.22.0_prisma@5.22.0/node_modules/@prisma/client/runtime/library.js:121:7315)
+    at $n.handleAndLogRequestError (/media/dev/Servidor/sistema-dre/node_modules/.pnpm/@prisma+client@5.22.0_prisma@5.22.0/node_modules/@prisma/client/runtime/library.js:121:6623)
+    at $n.request (/media/dev/Servidor/sistema-dre/node_modules/.pnpm/@prisma+client@5.22.0_prisma@5.22.0/node_modules/@prisma/client/runtime/library.js:121:6307)
+    at async l (/media/dev/Servidor/sistema-dre/node_modules/.pnpm/@prisma+client@5.22.0_prisma@5.22.0/node_modules/@prisma/client/runtime/library.js:130:9633)
+    at async DREService.compute (/media/dev/Servidor/sistema-dre/apps/api/dist/dre/dre.service.js:63:22)
+    at async /media/dev/Servidor/sistema-dre/node_modules/.pnpm/@nestjs+core@10.4.20_@nestjs+common@10.4.20_reflect-metadata@0.2.2_rxjs@7.8.2__@nestjs+_1031b346502275d0fd746cdba7b0b7f6/node_modules/@nestjs/core/router/router-execution-context.js:46:28
+    at async /media/dev/Servidor/sistema-dre/node_modules/.pnpm/@nestjs+core@10.4.20_@nestjs+common@10.4.20_reflect-metadata@0.2.2_rxjs@7.8.2__@nestjs+_1031b346502275d0fd746cdba7b0b7f6/node_modules/@nestjs/core/router/router-proxy.js:9:17
+[31m[Nest] 3165685  - [39m14/10/2025, 17:46:16 [31m  ERROR[39m [38;5;3m[ExceptionsHandler] [39m[31m
+Invalid `prisma.$queryRaw()` invocation:
+
+
+Raw query failed. Code: `42883`. Message: `ERROR: operator does not exist: "PCGType" = text
+HINT: No operator matches the given name and argument types. You might need to add explicit type casts.`[39m
+PrismaClientKnownRequestError: 
+Invalid `prisma.$queryRaw()` invocation:
+
+
+Raw query failed. Code: `42883`. Message: `ERROR: operator does not exist: "PCGType" = text
+HINT: No operator matches the given name and argument types. You might need to add explicit type casts.`
+    at $n.handleRequestError (/media/dev/Servidor/sistema-dre/node_modules/.pnpm/@prisma+client@5.22.0_prisma@5.22.0/node_modules/@prisma/client/runtime/library.js:121:7315)
+    at $n.handleAndLogRequestError (/media/dev/Servidor/sistema-dre/node_modules/.pnpm/@prisma+client@5.22.0_prisma@5.22.0/node_modules/@prisma/client/runtime/library.js:121:6623)
+    at $n.request (/media/dev/Servidor/sistema-dre/node_modules/.pnpm/@prisma+client@5.22.0_prisma@5.22.0/node_modules/@prisma/client/runtime/library.js:121:6307)
+    at async l (/media/dev/Servidor/sistema-dre/node_modules/.pnpm/@prisma+client@5.22.0_prisma@5.22.0/node_modules/@prisma/client/runtime/library.js:130:9633)
+    at async DREService.compute (/media/dev/Servidor/sistema-dre/apps/api/dist/dre/dre.service.js:63:22)
+    at async /media/dev/Servidor/sistema-dre/node_modules/.pnpm/@nestjs+core@10.4.20_@nestjs+common@10.4.20_reflect-metadata@0.2.2_rxjs@7.8.2__@nestjs+_1031b346502275d0fd746cdba7b0b7f6/node_modules/@nestjs/core/router/router-execution-context.js:46:28
+    at async /media/dev/Servidor/sistema-dre/node_modules/.pnpm/@nestjs+core@10.4.20_@nestjs+common@10.4.20_reflect-metadata@0.2.2_rxjs@7.8.2__@nestjs+_1031b346502275d0fd746cdba7b0b7f6/node_modules/@nestjs/core/router/router-proxy.js:9:17
+[31m[Nest] 3165685  - [39m14/10/2025, 17:46:16 [31m  ERROR[39m [38;5;3m[ExceptionsHandler] [39m[31m
+Invalid `prisma.$queryRaw()` invocation:
+
+
+Raw query failed. Code: `42883`. Message: `ERROR: operator does not exist: "PCGType" = text
+HINT: No operator matches the given name and argument types. You might need to add explicit type casts.`[39m
+PrismaClientKnownRequestError: 
+Invalid `prisma.$queryRaw()` invocation:
+
+
+Raw query failed. Code: `42883`. Message: `ERROR: operator does not exist: "PCGType" = text
+HINT: No operator matches the given name and argument types. You might need to add explicit type casts.`
+    at $n.handleRequestError (/media/dev/Servidor/sistema-dre/node_modules/.pnpm/@prisma+client@5.22.0_prisma@5.22.0/node_modules/@prisma/client/runtime/library.js:121:7315)
+    at $n.handleAndLogRequestError (/media/dev/Servidor/sistema-dre/node_modules/.pnpm/@prisma+client@5.22.0_prisma@5.22.0/node_modules/@prisma/client/runtime/library.js:121:6623)
+    at $n.request (/media/dev/Servidor/sistema-dre/node_modules/.pnpm/@prisma+client@5.22.0_prisma@5.22.0/node_modules/@prisma/client/runtime/library.js:121:6307)
+    at async l (/media/dev/Servidor/sistema-dre/node_modules/.pnpm/@prisma+client@5.22.0_prisma@5.22.0/node_modules/@prisma/client/runtime/library.js:130:9633)
+    at async DREService.compute (/media/dev/Servidor/sistema-dre/apps/api/dist/dre/dre.service.js:63:22)
+    at async /media/dev/Servidor/sistema-dre/node_modules/.pnpm/@nestjs+core@10.4.20_@nestjs+common@10.4.20_reflect-metadata@0.2.2_rxjs@7.8.2__@nestjs+_1031b346502275d0fd746cdba7b0b7f6/node_modules/@nestjs/core/router/router-execution-context.js:46:28
+    at async /media/dev/Servidor/sistema-dre/node_modules/.pnpm/@nestjs+core@10.4.20_@nestjs+common@10.4.20_reflect-metadata@0.2.2_rxjs@7.8.2__@nestjs+_1031b346502275d0fd746cdba7b0b7f6/node_modules/@nestjs/core/router/router-proxy.js:9:17
+[31m[Nest] 3165685  - [39m14/10/2025, 17:46:17 [31m  ERROR[39m [38;5;3m[ExceptionsHandler] [39m[31m
+Invalid `prisma.$queryRaw()` invocation:
+
+
+Raw query failed. Code: `42883`. Message: `ERROR: operator does not exist: "PCGType" = text
+HINT: No operator matches the given name and argument types. You might need to add explicit type casts.`[39m
+PrismaClientKnownRequestError: 
+Invalid `prisma.$queryRaw()` invocation:
+
+
+Raw query failed. Code: `42883`. Message: `ERROR: operator does not exist: "PCGType" = text
+HINT: No operator matches the given name and argument types. You might need to add explicit type casts.`
+    at $n.handleRequestError (/media/dev/Servidor/sistema-dre/node_modules/.pnpm/@prisma+client@5.22.0_prisma@5.22.0/node_modules/@prisma/client/runtime/library.js:121:7315)
+    at $n.handleAndLogRequestError (/media/dev/Servidor/sistema-dre/node_modules/.pnpm/@prisma+client@5.22.0_prisma@5.22.0/node_modules/@prisma/client/runtime/library.js:121:6623)
+    at $n.request (/media/dev/Servidor/sistema-dre/node_modules/.pnpm/@prisma+client@5.22.0_prisma@5.22.0/node_modules/@prisma/client/runtime/library.js:121:6307)
+    at async l (/media/dev/Servidor/sistema-dre/node_modules/.pnpm/@prisma+client@5.22.0_prisma@5.22.0/node_modules/@prisma/client/runtime/library.js:130:9633)
+    at async DREService.compute (/media/dev/Servidor/sistema-dre/apps/api/dist/dre/dre.service.js:63:22)
+    at async /media/dev/Servidor/sistema-dre/node_modules/.pnpm/@nestjs+core@10.4.20_@nestjs+common@10.4.20_reflect-metadata@0.2.2_rxjs@7.8.2__@nestjs+_1031b346502275d0fd746cdba7b0b7f6/node_modules/@nestjs/core/router/router-execution-context.js:46:28
+    at async /media/dev/Servidor/sistema-dre/node_modules/.pnpm/@nestjs+core@10.4.20_@nestjs+common@10.4.20_reflect-metadata@0.2.2_rxjs@7.8.2__@nestjs+_1031b346502275d0fd746cdba7b0b7f6/node_modules/@nestjs/core/router/router-proxy.js:9:17
+[31m[Nest] 3165685  - [39m14/10/2025, 17:46:18 [31m  ERROR[39m [38;5;3m[ExceptionsHandler] [39m[31m
+Invalid `prisma.$queryRaw()` invocation:
+
+
+Raw query failed. Code: `42883`. Message: `ERROR: operator does not exist: "PCGType" = text
+HINT: No operator matches the given name and argument types. You might need to add explicit type casts.`[39m
+PrismaClientKnownRequestError: 
+Invalid `prisma.$queryRaw()` invocation:
+
+
+Raw query failed. Code: `42883`. Message: `ERROR: operator does not exist: "PCGType" = text
+HINT: No operator matches the given name and argument types. You might need to add explicit type casts.`
+    at $n.handleRequestError (/media/dev/Servidor/sistema-dre/node_modules/.pnpm/@prisma+client@5.22.0_prisma@5.22.0/node_modules/@prisma/client/runtime/library.js:121:7315)
+    at $n.handleAndLogRequestError (/media/dev/Servidor/sistema-dre/node_modules/.pnpm/@prisma+client@5.22.0_prisma@5.22.0/node_modules/@prisma/client/runtime/library.js:121:6623)
+    at $n.request (/media/dev/Servidor/sistema-dre/node_modules/.pnpm/@prisma+client@5.22.0_prisma@5.22.0/node_modules/@prisma/client/runtime/library.js:121:6307)
+    at async l (/media/dev/Servidor/sistema-dre/node_modules/.pnpm/@prisma+client@5.22.0_prisma@5.22.0/node_modules/@prisma/client/runtime/library.js:130:9633)
+    at async DREService.compute (/media/dev/Servidor/sistema-dre/apps/api/dist/dre/dre.service.js:63:22)
+    at async /media/dev/Servidor/sistema-dre/node_modules/.pnpm/@nestjs+core@10.4.20_@nestjs+common@10.4.20_reflect-metadata@0.2.2_rxjs@7.8.2__@nestjs+_1031b346502275d0fd746cdba7b0b7f6/node_modules/@nestjs/core/router/router-execution-context.js:46:28
+    at async /media/dev/Servidor/sistema-dre/node_modules/.pnpm/@nestjs+core@10.4.20_@nestjs+common@10.4.20_reflect-metadata@0.2.2_rxjs@7.8.2__@nestjs+_1031b346502275d0fd746cdba7b0b7f6/node_modules/@nestjs/core/router/router-proxy.js:9:17
+[31m[Nest] 3165685  - [39m14/10/2025, 17:46:18 [31m  ERROR[39m [38;5;3m[ExceptionsHandler] [39m[31m
+Invalid `prisma.$queryRaw()` invocation:
+
+
+Raw query failed. Code: `42883`. Message: `ERROR: operator does not exist: "PCGType" = text
+HINT: No operator matches the given name and argument types. You might need to add explicit type casts.`[39m
+PrismaClientKnownRequestError: 
+Invalid `prisma.$queryRaw()` invocation:
+
+
+Raw query failed. Code: `42883`. Message: `ERROR: operator does not exist: "PCGType" = text
+HINT: No operator matches the given name and argument types. You might need to add explicit type casts.`
+    at $n.handleRequestError (/media/dev/Servidor/sistema-dre/node_modules/.pnpm/@prisma+client@5.22.0_prisma@5.22.0/node_modules/@prisma/client/runtime/library.js:121:7315)
+    at $n.handleAndLogRequestError (/media/dev/Servidor/sistema-dre/node_modules/.pnpm/@prisma+client@5.22.0_prisma@5.22.0/node_modules/@prisma/client/runtime/library.js:121:6623)
+    at $n.request (/media/dev/Servidor/sistema-dre/node_modules/.pnpm/@prisma+client@5.22.0_prisma@5.22.0/node_modules/@prisma/client/runtime/library.js:121:6307)
+    at async l (/media/dev/Servidor/sistema-dre/node_modules/.pnpm/@prisma+client@5.22.0_prisma@5.22.0/node_modules/@prisma/client/runtime/library.js:130:9633)
+    at async DREService.compute (/media/dev/Servidor/sistema-dre/apps/api/dist/dre/dre.service.js:63:22)
+    at async /media/dev/Servidor/sistema-dre/node_modules/.pnpm/@nestjs+core@10.4.20_@nestjs+common@10.4.20_reflect-metadata@0.2.2_rxjs@7.8.2__@nestjs+_1031b346502275d0fd746cdba7b0b7f6/node_modules/@nestjs/core/router/router-execution-context.js:46:28
+    at async /media/dev/Servidor/sistema-dre/node_modules/.pnpm/@nestjs+core@10.4.20_@nestjs+common@10.4.20_reflect-metadata@0.2.2_rxjs@7.8.2__@nestjs+_1031b346502275d0fd746cdba7b0b7f6/node_modules/@nestjs/core/router/router-proxy.js:9:17
+[31m[Nest] 3165685  - [39m14/10/2025, 17:46:18 [31m  ERROR[39m [38;5;3m[ExceptionsHandler] [39m[31m
+Invalid `prisma.$queryRaw()` invocation:
+
+
+Raw query failed. Code: `42883`. Message: `ERROR: operator does not exist: "PCGType" = text
+HINT: No operator matches the given name and argument types. You might need to add explicit type casts.`[39m
+PrismaClientKnownRequestError: 
+Invalid `prisma.$queryRaw()` invocation:
+
+
+Raw query failed. Code: `42883`. Message: `ERROR: operator does not exist: "PCGType" = text
+HINT: No operator matches the given name and argument types. You might need to add explicit type casts.`
+    at $n.handleRequestError (/media/dev/Servidor/sistema-dre/node_modules/.pnpm/@prisma+client@5.22.0_prisma@5.22.0/node_modules/@prisma/client/runtime/library.js:121:7315)
+    at $n.handleAndLogRequestError (/media/dev/Servidor/sistema-dre/node_modules/.pnpm/@prisma+client@5.22.0_prisma@5.22.0/node_modules/@prisma/client/runtime/library.js:121:6623)
+    at $n.request (/media/dev/Servidor/sistema-dre/node_modules/.pnpm/@prisma+client@5.22.0_prisma@5.22.0/node_modules/@prisma/client/runtime/library.js:121:6307)
+    at async l (/media/dev/Servidor/sistema-dre/node_modules/.pnpm/@prisma+client@5.22.0_prisma@5.22.0/node_modules/@prisma/client/runtime/library.js:130:9633)
+    at async DREService.compute (/media/dev/Servidor/sistema-dre/apps/api/dist/dre/dre.service.js:63:22)
+    at async /media/dev/Servidor/sistema-dre/node_modules/.pnpm/@nestjs+core@10.4.20_@nestjs+common@10.4.20_reflect-metadata@0.2.2_rxjs@7.8.2__@nestjs+_1031b346502275d0fd746cdba7b0b7f6/node_modules/@nestjs/core/router/router-execution-context.js:46:28
+    at async /media/dev/Servidor/sistema-dre/node_modules/.pnpm/@nestjs+core@10.4.20_@nestjs+common@10.4.20_reflect-metadata@0.2.2_rxjs@7.8.2__@nestjs+_1031b346502275d0fd746cdba7b0b7f6/node_modules/@nestjs/core/router/router-proxy.js:9:17
+[2J[3J[H[[90m17:46:55[0m] File change detected. Starting incremental compilation...
+
+[96msrc/dre/dre.service.ts[0m:[93m95[0m:[93m9[0m - [91merror[0m[90m TS2345: [0mArgument of type 'Sql' is not assignable to parameter of type 'string'.
+
+[7m95[0m         Prisma.sql`, `,
+[7m  [0m [91m        ~~~~~~~~~~~~~~[0m
+
+[[90m17:46:55[0m] Found 1 error. Watching for file changes.
+
+[2J[3J[H[[90m17:47:45[0m] File change detected. Starting incremental compilation...
+
+[96msrc/dre/dre.service.ts[0m:[93m95[0m:[93m9[0m - [91merror[0m[90m TS2345: [0mArgument of type 'Sql' is not assignable to parameter of type 'string'.
+
+[7m95[0m         Prisma.sql`, `,
+[7m  [0m [91m        ~~~~~~~~~~~~~~[0m
+
+[[90m17:47:45[0m] Found 1 error. Watching for file changes.
+
+[2J[3J[H[[90m17:49:16[0m] File change detected. Starting incremental compilation...
+
+[96msrc/dre/dre.service.ts[0m:[93m95[0m:[93m9[0m - [91merror[0m[90m TS2345: [0mArgument of type 'Sql' is not assignable to parameter of type 'string'.
+
+[7m95[0m         Prisma.sql`, `,
+[7m  [0m [91m        ~~~~~~~~~~~~~~[0m
+
+[[90m17:49:16[0m] Found 1 error. Watching for file changes.
+
+[2J[3J[H[[90m17:50:19[0m] File change detected. Starting incremental compilation...
+
+[[90m17:50:19[0m] Found 0 errors. Watching for file changes.
+
+[32m[Nest] 3180778  - [39m14/10/2025, 17:50:19 [32m    LOG[39m [38;5;3m[NestFactory] [39m[32mStarting Nest application...[39m
+[32m[Nest] 3180778  - [39m14/10/2025, 17:50:19 [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mPrismaModule dependencies initialized[39m[38;5;3m +10ms[39m
+[32m[Nest] 3180778  - [39m14/10/2025, 17:50:19 [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mAppModule dependencies initialized[39m[38;5;3m +0ms[39m
+[32m[Nest] 3180778  - [39m14/10/2025, 17:50:19 [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mDREModule dependencies initialized[39m[38;5;3m +1ms[39m
+[32m[Nest] 3180778  - [39m14/10/2025, 17:50:19 [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mTinyModule dependencies initialized[39m[38;5;3m +0ms[39m
+[32m[Nest] 3180778  - [39m14/10/2025, 17:50:19 [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mImportModule dependencies initialized[39m[38;5;3m +0ms[39m
+[32m[Nest] 3180778  - [39m14/10/2025, 17:50:19 [32m    LOG[39m [38;5;3m[RoutesResolver] [39m[32mAppController {/v1}:[39m[38;5;3m +5ms[39m
+[32m[Nest] 3180778  - [39m14/10/2025, 17:50:19 [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/v1, GET} route[39m[38;5;3m +2ms[39m
+[32m[Nest] 3180778  - [39m14/10/2025, 17:50:19 [32m    LOG[39m [38;5;3m[RoutesResolver] [39m[32mDREController {/v1/dre}:[39m[38;5;3m +0ms[39m
+[32m[Nest] 3180778  - [39m14/10/2025, 17:50:19 [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/v1/dre, GET} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 3180778  - [39m14/10/2025, 17:50:19 [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/v1/dre/filters, GET} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 3180778  - [39m14/10/2025, 17:50:19 [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/v1/dre/export, GET} route[39m[38;5;3m +1ms[39m
+[32m[Nest] 3180778  - [39m14/10/2025, 17:50:19 [32m    LOG[39m [38;5;3m[RoutesResolver] [39m[32mImportController {/v1/tenants/:id/import}:[39m[38;5;3m +0ms[39m
+[32m[Nest] 3180778  - [39m14/10/2025, 17:50:19 [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/v1/tenants/:id/import, POST} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 3180778  - [39m14/10/2025, 17:50:19 [32m    LOG[39m [38;5;3m[RoutesResolver] [39m[32mTinyController {/v1/tenants/:tenantId/tiny}:[39m[38;5;3m +0ms[39m
+[32m[Nest] 3180778  - [39m14/10/2025, 17:50:19 [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/v1/tenants/:tenantId/tiny/sync, POST} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 3180778  - [39m14/10/2025, 17:50:19 [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/v1/tenants/:tenantId/tiny/config, POST} route[39m[38;5;3m +1ms[39m
+[32m[Nest] 3180778  - [39m14/10/2025, 17:50:19 [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/v1/tenants/:tenantId/tiny/status, GET} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 3180778  - [39m14/10/2025, 17:50:19 [32m    LOG[39m [38;5;3m[NestApplication] [39m[32mNest application successfully started[39m[38;5;3m +50ms[39m
 API on http://localhost:4000/v1
-[31m[Nest] 2995017  - [39m14/10/2025, 16:29:29 [31m  ERROR[39m [38;5;3m[TinySchedulerService] [39m[31mErro ao rodar ciclo inicial do Tiny Scheduler[39m
-PrismaClientKnownRequestError: 
-Invalid `this.prisma.tinyIntegrationConfig.findMany()` invocation in
-/media/dev/Servidor/sistema-dre/apps/api/dist/integrations/tiny/tiny-config.service.js:41:50
-
-  38     });
-  39 }
-  40 findAllEnabled() {
-→ 41     return this.prisma.tinyIntegrationConfig.findMany(
-The table `public.TinyIntegrationConfig` does not exist in the current database.
-    at $n.handleRequestError (/media/dev/Servidor/sistema-dre/node_modules/.pnpm/@prisma+client@5.22.0_prisma@5.22.0/node_modules/@prisma/client/runtime/library.js:121:7315)
-    at $n.handleAndLogRequestError (/media/dev/Servidor/sistema-dre/node_modules/.pnpm/@prisma+client@5.22.0_prisma@5.22.0/node_modules/@prisma/client/runtime/library.js:121:6623)
-    at $n.request (/media/dev/Servidor/sistema-dre/node_modules/.pnpm/@prisma+client@5.22.0_prisma@5.22.0/node_modules/@prisma/client/runtime/library.js:121:6307)
-    at async l (/media/dev/Servidor/sistema-dre/node_modules/.pnpm/@prisma+client@5.22.0_prisma@5.22.0/node_modules/@prisma/client/runtime/library.js:130:9633)
-    at async TinySchedulerService.runCycle (/media/dev/Servidor/sistema-dre/apps/api/dist/integrations/tiny/tiny.scheduler.js:35:25)
-[31m[Nest] 2995017  - [39m14/10/2025, 16:31:55 [31m  ERROR[39m [38;5;3m[ExceptionsHandler] [39m[31m
-Invalid `this.prisma.tinyIntegrationConfig.findUnique()` invocation in
-/media/dev/Servidor/sistema-dre/apps/api/dist/integrations/tiny/tiny-config.service.js:60:50
-
-  57     });
-  58 }
-  59 async getStatus(tenantId) {
-→ 60     return this.prisma.tinyIntegrationConfig.findUnique({
-           where: {
-             tenantId: undefined,
-         ?   id?: String,
-         ?   AND?: TinyIntegrationConfigWhereInput | TinyIntegrationConfigWhereInput[],
-         ?   OR?: TinyIntegrationConfigWhereInput[],
-         ?   NOT?: TinyIntegrationConfigWhereInput | TinyIntegrationConfigWhereInput[],
-         ?   token?: StringFilter | String,
-         ?   modules?: StringNullableListFilter,
-         ?   enabled?: BoolFilter | Boolean,
-         ?   lastSyncAt?: DateTimeNullableFilter | DateTime | Null,
-         ?   nextSyncAt?: DateTimeNullableFilter | DateTime | Null,
-         ?   createdAt?: DateTimeFilter | DateTime,
-         ?   updatedAt?: DateTimeFilter | DateTime,
-         ?   syncFrequency?: IntFilter | Int,
-         ?   tenant?: TenantRelationFilter | TenantWhereInput
-           }
-         })
-
-Argument `where` of type TinyIntegrationConfigWhereUniqueInput needs at least one of `id` or `tenantId` arguments. Available options are marked with ?.[39m
-PrismaClientValidationError: 
-Invalid `this.prisma.tinyIntegrationConfig.findUnique()` invocation in
-/media/dev/Servidor/sistema-dre/apps/api/dist/integrations/tiny/tiny-config.service.js:60:50
-
-  57     });
-  58 }
-  59 async getStatus(tenantId) {
-→ 60     return this.prisma.tinyIntegrationConfig.findUnique({
-           where: {
-             tenantId: undefined,
-         ?   id?: String,
-         ?   AND?: TinyIntegrationConfigWhereInput | TinyIntegrationConfigWhereInput[],
-         ?   OR?: TinyIntegrationConfigWhereInput[],
-         ?   NOT?: TinyIntegrationConfigWhereInput | TinyIntegrationConfigWhereInput[],
-         ?   token?: StringFilter | String,
-         ?   modules?: StringNullableListFilter,
-         ?   enabled?: BoolFilter | Boolean,
-         ?   lastSyncAt?: DateTimeNullableFilter | DateTime | Null,
-         ?   nextSyncAt?: DateTimeNullableFilter | DateTime | Null,
-         ?   createdAt?: DateTimeFilter | DateTime,
-         ?   updatedAt?: DateTimeFilter | DateTime,
-         ?   syncFrequency?: IntFilter | Int,
-         ?   tenant?: TenantRelationFilter | TenantWhereInput
-           }
-         })
-
-Argument `where` of type TinyIntegrationConfigWhereUniqueInput needs at least one of `id` or `tenantId` arguments. Available options are marked with ?.
-    at wn (/media/dev/Servidor/sistema-dre/node_modules/.pnpm/@prisma+client@5.22.0_prisma@5.22.0/node_modules/@prisma/client/runtime/library.js:29:1363)
-    at $n.handleRequestError (/media/dev/Servidor/sistema-dre/node_modules/.pnpm/@prisma+client@5.22.0_prisma@5.22.0/node_modules/@prisma/client/runtime/library.js:121:6958)
-    at $n.handleAndLogRequestError (/media/dev/Servidor/sistema-dre/node_modules/.pnpm/@prisma+client@5.22.0_prisma@5.22.0/node_modules/@prisma/client/runtime/library.js:121:6623)
-    at $n.request (/media/dev/Servidor/sistema-dre/node_modules/.pnpm/@prisma+client@5.22.0_prisma@5.22.0/node_modules/@prisma/client/runtime/library.js:121:6307)
-    at async l (/media/dev/Servidor/sistema-dre/node_modules/.pnpm/@prisma+client@5.22.0_prisma@5.22.0/node_modules/@prisma/client/runtime/library.js:130:9633)
-    at async /media/dev/Servidor/sistema-dre/node_modules/.pnpm/@nestjs+core@10.4.20_@nestjs+common@10.4.20_reflect-metadata@0.2.2_rxjs@7.8.2__@nestjs+_1031b346502275d0fd746cdba7b0b7f6/node_modules/@nestjs/core/router/router-execution-context.js:46:28
-    at async /media/dev/Servidor/sistema-dre/node_modules/.pnpm/@nestjs+core@10.4.20_@nestjs+common@10.4.20_reflect-metadata@0.2.2_rxjs@7.8.2__@nestjs+_1031b346502275d0fd746cdba7b0b7f6/node_modules/@nestjs/core/router/router-proxy.js:9:17
-[31m[Nest] 2995017  - [39m14/10/2025, 16:31:55 [31m  ERROR[39m [38;5;3m[ExceptionsHandler] [39m[31m
-Invalid `this.prisma.tinyIntegrationConfig.findUnique()` invocation in
-/media/dev/Servidor/sistema-dre/apps/api/dist/integrations/tiny/tiny-config.service.js:60:50
-
-  57     });
-  58 }
-  59 async getStatus(tenantId) {
-→ 60     return this.prisma.tinyIntegrationConfig.findUnique({
-           where: {
-             tenantId: undefined,
-         ?   id?: String,
-         ?   AND?: TinyIntegrationConfigWhereInput | TinyIntegrationConfigWhereInput[],
-         ?   OR?: TinyIntegrationConfigWhereInput[],
-         ?   NOT?: TinyIntegrationConfigWhereInput | TinyIntegrationConfigWhereInput[],
-         ?   token?: StringFilter | String,
-         ?   modules?: StringNullableListFilter,
-         ?   enabled?: BoolFilter | Boolean,
-         ?   lastSyncAt?: DateTimeNullableFilter | DateTime | Null,
-         ?   nextSyncAt?: DateTimeNullableFilter | DateTime | Null,
-         ?   createdAt?: DateTimeFilter | DateTime,
-         ?   updatedAt?: DateTimeFilter | DateTime,
-         ?   syncFrequency?: IntFilter | Int,
-         ?   tenant?: TenantRelationFilter | TenantWhereInput
-           }
-         })
-
-Argument `where` of type TinyIntegrationConfigWhereUniqueInput needs at least one of `id` or `tenantId` arguments. Available options are marked with ?.[39m
-PrismaClientValidationError: 
-Invalid `this.prisma.tinyIntegrationConfig.findUnique()` invocation in
-/media/dev/Servidor/sistema-dre/apps/api/dist/integrations/tiny/tiny-config.service.js:60:50
-
-  57     });
-  58 }
-  59 async getStatus(tenantId) {
-→ 60     return this.prisma.tinyIntegrationConfig.findUnique({
-           where: {
-             tenantId: undefined,
-         ?   id?: String,
-         ?   AND?: TinyIntegrationConfigWhereInput | TinyIntegrationConfigWhereInput[],
-         ?   OR?: TinyIntegrationConfigWhereInput[],
-         ?   NOT?: TinyIntegrationConfigWhereInput | TinyIntegrationConfigWhereInput[],
-         ?   token?: StringFilter | String,
-         ?   modules?: StringNullableListFilter,
-         ?   enabled?: BoolFilter | Boolean,
-         ?   lastSyncAt?: DateTimeNullableFilter | DateTime | Null,
-         ?   nextSyncAt?: DateTimeNullableFilter | DateTime | Null,
-         ?   createdAt?: DateTimeFilter | DateTime,
-         ?   updatedAt?: DateTimeFilter | DateTime,
-         ?   syncFrequency?: IntFilter | Int,
-         ?   tenant?: TenantRelationFilter | TenantWhereInput
-           }
-         })
-
-Argument `where` of type TinyIntegrationConfigWhereUniqueInput needs at least one of `id` or `tenantId` arguments. Available options are marked with ?.
-    at wn (/media/dev/Servidor/sistema-dre/node_modules/.pnpm/@prisma+client@5.22.0_prisma@5.22.0/node_modules/@prisma/client/runtime/library.js:29:1363)
-    at $n.handleRequestError (/media/dev/Servidor/sistema-dre/node_modules/.pnpm/@prisma+client@5.22.0_prisma@5.22.0/node_modules/@prisma/client/runtime/library.js:121:6958)
-    at $n.handleAndLogRequestError (/media/dev/Servidor/sistema-dre/node_modules/.pnpm/@prisma+client@5.22.0_prisma@5.22.0/node_modules/@prisma/client/runtime/library.js:121:6623)
-    at $n.request (/media/dev/Servidor/sistema-dre/node_modules/.pnpm/@prisma+client@5.22.0_prisma@5.22.0/node_modules/@prisma/client/runtime/library.js:121:6307)
-    at async l (/media/dev/Servidor/sistema-dre/node_modules/.pnpm/@prisma+client@5.22.0_prisma@5.22.0/node_modules/@prisma/client/runtime/library.js:130:9633)
-    at async /media/dev/Servidor/sistema-dre/node_modules/.pnpm/@nestjs+core@10.4.20_@nestjs+common@10.4.20_reflect-metadata@0.2.2_rxjs@7.8.2__@nestjs+_1031b346502275d0fd746cdba7b0b7f6/node_modules/@nestjs/core/router/router-execution-context.js:46:28
-    at async /media/dev/Servidor/sistema-dre/node_modules/.pnpm/@nestjs+core@10.4.20_@nestjs+common@10.4.20_reflect-metadata@0.2.2_rxjs@7.8.2__@nestjs+_1031b346502275d0fd746cdba7b0b7f6/node_modules/@nestjs/core/router/router-proxy.js:9:17
-[31m[Nest] 2995017  - [39m14/10/2025, 16:34:29 [31m  ERROR[39m [38;5;3m[TinySchedulerService] [39m[31mErro ao rodar ciclo agendado do Tiny Scheduler[39m
-PrismaClientKnownRequestError: 
-Invalid `this.prisma.tinyIntegrationConfig.findMany()` invocation in
-/media/dev/Servidor/sistema-dre/apps/api/dist/integrations/tiny/tiny-config.service.js:41:50
-
-  38     });
-  39 }
-  40 findAllEnabled() {
-→ 41     return this.prisma.tinyIntegrationConfig.findMany(
-The table `public.TinyIntegrationConfig` does not exist in the current database.
-    at $n.handleRequestError (/media/dev/Servidor/sistema-dre/node_modules/.pnpm/@prisma+client@5.22.0_prisma@5.22.0/node_modules/@prisma/client/runtime/library.js:121:7315)
-    at $n.handleAndLogRequestError (/media/dev/Servidor/sistema-dre/node_modules/.pnpm/@prisma+client@5.22.0_prisma@5.22.0/node_modules/@prisma/client/runtime/library.js:121:6623)
-    at $n.request (/media/dev/Servidor/sistema-dre/node_modules/.pnpm/@prisma+client@5.22.0_prisma@5.22.0/node_modules/@prisma/client/runtime/library.js:121:6307)
-    at async l (/media/dev/Servidor/sistema-dre/node_modules/.pnpm/@prisma+client@5.22.0_prisma@5.22.0/node_modules/@prisma/client/runtime/library.js:130:9633)
-    at async TinySchedulerService.runCycle (/media/dev/Servidor/sistema-dre/apps/api/dist/integrations/tiny/tiny.scheduler.js:35:25)
+[41m[30m ELIFECYCLE [39m[49m [31mCommand failed.[39m
