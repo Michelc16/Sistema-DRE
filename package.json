@@ -1,0 +1,16 @@
+{
+    "name": "sistema-dre",
+    "private":"true",
+    "workspaces":["apps/*","packages/*"],
+    "scripts": {
+        "dev": "turbo run dev",
+        "build": "turbo run build",
+        "start": "turbo run start",
+        "lint": "turbo run lint",
+        "db:migrate": "pnpm --filter @dre/api prisma migrate dev",
+        "db:seed": "pnpm --filter @dre/api prisma db seed"
+    },
+    "devDependencies": {
+        "turbo": "^2.1.1"
+    }
+}    
