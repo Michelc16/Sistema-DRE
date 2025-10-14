@@ -1,6 +1,13 @@
-import { BadRequestException, Controller, Get, Query } from '@nestjs/common';
+import {
+  BadRequestException,
+  Controller,
+  Get,
+  Query,
+  Res,
+} from '@nestjs/common';
 import { DREService, DreGrouping } from './dre.service';
 import { PCGType } from '@prisma/client';
+import { Response } from 'express';
 
 @Controller('dre')
 export class DREController {
@@ -50,6 +57,48 @@ export class DREController {
   @Get('filters')
   async getFilters(@Query('tenantId') tenantId: string) {
     return this.svc.getFilters(tenantId);
+  }
+
+  @Get('export')
+  async exportDre(
+    @Query() query: Record<string, string | string[]>,
+    @Res() res: Response,
+  ) {
+    const data = await this.getDre(query);
+    const rows = data.rows || [];
+    const csvRows = [
+      ['period', 'pcgCode', 'pcgName', 'pcgType', 'total', 'entries'],
+      ...rows.map((row) => [
+        row.period,
+        row.pcgCode ?? '',
+        row.pcgName ?? '',
+        row.pcgType ?? '',
+        String(row.total),
+        String(row.entries),
+      ]),
+    ];
+
+    const csv = csvRows
+      .map((line) =>
+        line
+          .map((cell) => {
+            const safe = cell.replace(/"/g, '""');
+            return /[",;\n]/.test(safe) ? `"${safe}"` : safe;
+          })
+          .join(';'),
+      )
+      .join('\n');
+
+    const tenantId = this.normalizeSingle(query.tenantId) ?? 'tenant';
+    const from = this.normalizeSingle(query.from) ?? 'start';
+    const to = this.normalizeSingle(query.to) ?? 'end';
+
+    res.setHeader('Content-Type', 'text/csv; charset=utf-8');
+    res.setHeader(
+      'Content-Disposition',
+      `attachment; filename="dre-${tenantId}-${from}-${to}.csv"`,
+    );
+    res.send(csv);
   }
 
   private normalizeSingle(value: string | string[] | undefined) {

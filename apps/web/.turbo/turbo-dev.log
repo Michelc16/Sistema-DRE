@@ -13,3 +13,5 @@
  GET / [32m200[39m in 682ms
  [32m[1m✓[22m[39m Compiled /integrations/tiny in 163ms (500 modules)
  [32m[1m✓[22m[39m Compiled /dre in 141ms (506 modules)
+ [32m[1m✓[22m[39m Compiled in 287ms (503 modules)
+ [32m[1m✓[22m[39m Compiled in 213ms (503 modules)

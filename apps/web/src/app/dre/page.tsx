@@ -71,6 +71,7 @@ export default function DREPage() {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [loadingFilters, setLoadingFilters] = useState(false);
+  const [exporting, setExporting] = useState(false);
 
   useEffect(() => {
     let active = true;
@@ -166,6 +167,49 @@ export default function DREPage() {
       .sort((a, b) => (a.period < b.period ? -1 : 1));
   }, [data]);
 
+  async function exportCsv() {
+    try {
+      setExporting(true);
+      const params = new URLSearchParams({
+        tenantId: filters.tenantId,
+        from: filters.from,
+        to: filters.to,
+        basis: filters.basis,
+        currency: filters.currency,
+        groupBy: filters.groupBy,
+      });
+      if (filters.pcg.length) params.set('pcg', filters.pcg.join(','));
+      if (filters.types.length) params.set('types', filters.types.join(','));
+      if (filters.origins.length) params.set('origins', filters.origins.join(','));
+      if (filters.minAmount) params.set('minAmount', filters.minAmount);
+      if (filters.maxAmount) params.set('maxAmount', filters.maxAmount);
+      if (filters.search) params.set('search', filters.search);
+
+      const response = await fetch(`${API_BASE}/dre/export?${params.toString()}`, {
+        cache: 'no-store',
+      });
+
+      if (!response.ok) {
+        throw new Error('Falha ao exportar DRE');
+      }
+
+      const blob = await response.blob();
+      const url = window.URL.createObjectURL(blob);
+      const link = document.createElement('a');
+      link.href = url;
+      link.download = `dre-${filters.tenantId}-${filters.from}-${filters.to}.csv`;
+      document.body.appendChild(link);
+      link.click();
+      link.remove();
+      window.URL.revokeObjectURL(url);
+    } catch (err) {
+      console.error(err);
+      alert('Não foi possível exportar a DRE. Tente novamente.');
+    } finally {
+      setExporting(false);
+    }
+  }
+
   return (
     <div className="stack">
       <header className="filters-panel">
@@ -176,8 +220,18 @@ export default function DREPage() {
               Analise o resultado financeiro com filtros avançados por período, contas gerenciais e origem.
             </p>
           </div>
-          <div className="status-pill">
-            {loading ? 'Atualizando dados...' : 'Dados atualizados'}
+          <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
+            <div className="status-pill">
+              {loading ? 'Atualizando dados...' : 'Dados atualizados'}
+            </div>
+            <button
+              type="button"
+              className="button-secondary"
+              onClick={exportCsv}
+              disabled={exporting || loading}
+            >
+              {exporting ? 'Exportando...' : 'Exportar CSV'}
+            </button>
           </div>
         </div>
 

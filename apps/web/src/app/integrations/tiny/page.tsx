@@ -1,6 +1,6 @@
 'use client';
 
-import { useMemo, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 
 const API_BASE = process.env.NEXT_PUBLIC_API_URL ?? 'http://localhost:4000/v1';
 
@@ -18,6 +18,14 @@ interface SyncResult {
   payload?: unknown;
 }
 
+interface TinyStatus {
+  enabled: boolean;
+  modules: ModuleKind[];
+  lastSyncAt?: string | null;
+  nextSyncAt?: string | null;
+  syncFrequency?: number | null;
+}
+
 function getDefaultFrom() {
   const now = new Date();
   now.setMonth(now.getMonth() - 1);
@@ -32,10 +40,14 @@ export default function TinyIntegrationPage() {
   const [modules, setModules] = useState<ModuleKind[]>(['orders']);
   const [from, setFrom] = useState(getDefaultFrom());
   const [pageSize, setPageSize] = useState(50);
+  const [autoSync, setAutoSync] = useState(true);
+  const [frequency, setFrequency] = useState(1440);
+  const [status, setStatus] = useState<TinyStatus | null>(null);
   const [result, setResult] = useState<SyncResult>({
     status: 'idle',
     message: '',
   });
+  const [loadingStatus, setLoadingStatus] = useState(false);
 
   const modulesSummary = useMemo(
     () =>
@@ -51,6 +63,85 @@ export default function TinyIntegrationPage() {
         ? prev.filter((module) => module !== value)
         : [...prev, value],
     );
+  };
+
+  const loadStatus = async (tenant = tenantId) => {
+    try {
+      setLoadingStatus(true);
+      const response = await fetch(
+        `${API_BASE}/tenants/${encodeURIComponent(tenant)}/tiny/status`,
+        { cache: 'no-store' },
+      );
+      if (!response.ok) return;
+      const payload = await response.json();
+      if (!payload) return;
+      if (payload.modules) {
+        setModules(
+          payload.modules.filter((module: string): module is ModuleKind =>
+            ['orders', 'invoices', 'financial'].includes(module),
+          ),
+        );
+      }
+      if (payload.syncFrequency) setFrequency(payload.syncFrequency);
+      if (typeof payload.enabled === 'boolean') setAutoSync(payload.enabled);
+      setStatus({
+        enabled: payload.enabled ?? true,
+        modules: payload.modules ?? [],
+        lastSyncAt: payload.lastSyncAt,
+        nextSyncAt: payload.nextSyncAt,
+        syncFrequency: payload.syncFrequency,
+      });
+    } finally {
+      setLoadingStatus(false);
+    }
+  };
+
+  useEffect(() => {
+    loadStatus();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [tenantId]);
+
+  const saveConfig = async () => {
+    if (!token.trim()) {
+      setResult({
+        status: 'error',
+        message: 'Informe o token do Tiny antes de salvar a configuração.',
+      });
+      return;
+    }
+
+    try {
+      const response = await fetch(
+        `${API_BASE}/tenants/${encodeURIComponent(tenantId)}/tiny/config`,
+        {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            tenantId,
+            token,
+            modules,
+            enabled: autoSync,
+            syncFrequency: frequency,
+          }),
+        },
+      );
+
+      if (!response.ok) {
+        const payload = await response.json().catch(() => ({}));
+        throw new Error(payload?.message ?? 'Falha ao salvar configuração.');
+      }
+
+      setResult({
+        status: 'success',
+        message: 'Configuração salva. A sincronização automática usará essas definições.',
+      });
+      loadStatus();
+    } catch (err: any) {
+      setResult({
+        status: 'error',
+        message: err?.message ?? 'Erro ao salvar configurações.',
+      });
+    }
   };
 
   const sync = async () => {
@@ -104,12 +195,23 @@ export default function TinyIntegrationPage() {
         message: 'Integração concluída com sucesso.',
         payload,
       });
+      loadStatus();
     } catch (err: any) {
       setResult({
         status: 'error',
         message: err?.message ?? 'Erro ao comunicar com o Tiny ERP.',
       });
     }
+  };
+
+  const formatDate = (iso?: string | null) => {
+    if (!iso) return '—';
+    const date = new Date(iso);
+    if (Number.isNaN(date.getTime())) return iso;
+    return date.toLocaleString('pt-BR', {
+      dateStyle: 'short',
+      timeStyle: 'short',
+    });
   };
 
   return (
@@ -163,6 +265,29 @@ export default function TinyIntegrationPage() {
               onChange={(event) => setPageSize(Number(event.target.value) || 50)}
             />
           </div>
+
+          <div className="field">
+            <label>Frequência (minutos)</label>
+            <input
+              type="number"
+              min={60}
+              step={60}
+              value={frequency}
+              onChange={(event) => setFrequency(Number(event.target.value) || 1440)}
+            />
+          </div>
+
+          <div className="field">
+            <label>Sincronização automática</label>
+            <label className={`pill-toggle ${autoSync ? 'active' : ''}`}>
+              <input
+                type="checkbox"
+                checked={autoSync}
+                onChange={(event) => setAutoSync(event.target.checked)}
+              />
+              <span>{autoSync ? 'Ativa (executa a cada 24h)' : 'Desativada'}</span>
+            </label>
+          </div>
         </div>
 
         <div className="field" style={{ marginTop: 12 }}>
@@ -194,6 +319,14 @@ export default function TinyIntegrationPage() {
 
         <div className="hero-actions" style={{ justifyContent: 'flex-end' }}>
           <button
+            className="button-secondary"
+            type="button"
+            onClick={saveConfig}
+            disabled={result.status === 'syncing'}
+          >
+            Salvar configuração
+          </button>
+          <button
             className="button-primary"
             type="button"
             onClick={sync}
@@ -207,6 +340,11 @@ export default function TinyIntegrationPage() {
       {result.status !== 'idle' && (
         <section className="card">
           <h3 style={{ margin: '0 0 8px' }}>Status</h3>
+          <p style={{ margin: '0 0 12px', color: 'var(--text-muted)' }}>
+            {loadingStatus
+              ? 'Carregando status...'
+              : `Última sincronização: ${formatDate(status?.lastSyncAt)} · Próxima: ${formatDate(status?.nextSyncAt)}`}
+          </p>
           <p
             style={{
               margin: 0,
