@@ -2,35 +2,316 @@
 > @dre/api@0.1.0 dev /media/dev/Servidor/sistema-dre/apps/api
 > nest start --watch
 
-[2J[3J[H[[90m14:52:12[0m] Starting compilation in watch mode...
+[2J[3J[H[[90m16:14:29[0m] Starting compilation in watch mode...
 
-[[90m14:52:14[0m] Found 0 errors. Watching for file changes.
+[[90m16:14:31[0m] Found 0 errors. Watching for file changes.
 
-file:///media/dev/Servidor/sistema-dre/apps/api/dist/main.js:38
-Object.defineProperty(exports, "__esModule", { value: true });
-                      ^
+[32m[Nest] 2960247  - [39m14/10/2025, 16:14:31 [32m    LOG[39m [38;5;3m[NestFactory] [39m[32mStarting Nest application...[39m
+[32m[Nest] 2960247  - [39m14/10/2025, 16:14:31 [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mPrismaModule dependencies initialized[39m[38;5;3m +9ms[39m
+[32m[Nest] 2960247  - [39m14/10/2025, 16:14:31 [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mAppModule dependencies initialized[39m[38;5;3m +0ms[39m
+[32m[Nest] 2960247  - [39m14/10/2025, 16:14:31 [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mDREModule dependencies initialized[39m[38;5;3m +1ms[39m
+[32m[Nest] 2960247  - [39m14/10/2025, 16:14:31 [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mTinyModule dependencies initialized[39m[38;5;3m +0ms[39m
+[32m[Nest] 2960247  - [39m14/10/2025, 16:14:31 [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mImportModule dependencies initialized[39m[38;5;3m +0ms[39m
+[32m[Nest] 2960247  - [39m14/10/2025, 16:14:31 [32m    LOG[39m [38;5;3m[RoutesResolver] [39m[32mAppController {/v1}:[39m[38;5;3m +5ms[39m
+[32m[Nest] 2960247  - [39m14/10/2025, 16:14:31 [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/v1, GET} route[39m[38;5;3m +2ms[39m
+[32m[Nest] 2960247  - [39m14/10/2025, 16:14:31 [32m    LOG[39m [38;5;3m[RoutesResolver] [39m[32mDREController {/v1/dre}:[39m[38;5;3m +0ms[39m
+[32m[Nest] 2960247  - [39m14/10/2025, 16:14:31 [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/v1/dre, GET} route[39m[38;5;3m +1ms[39m
+[32m[Nest] 2960247  - [39m14/10/2025, 16:14:31 [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/v1/dre/filters, GET} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 2960247  - [39m14/10/2025, 16:14:31 [32m    LOG[39m [38;5;3m[RoutesResolver] [39m[32mImportController {/v1/tenants/:id/import}:[39m[38;5;3m +1ms[39m
+[32m[Nest] 2960247  - [39m14/10/2025, 16:14:31 [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/v1/tenants/:id/import, POST} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 2960247  - [39m14/10/2025, 16:14:31 [32m    LOG[39m [38;5;3m[RoutesResolver] [39m[32mTinyController {/v1/tenants/:tenantId/tiny}:[39m[38;5;3m +0ms[39m
+[32m[Nest] 2960247  - [39m14/10/2025, 16:14:31 [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/v1/tenants/:tenantId/tiny/sync, POST} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 2960247  - [39m14/10/2025, 16:14:31 [32m    LOG[39m [38;5;3m[NestApplication] [39m[32mNest application successfully started[39m[38;5;3m +47ms[39m
+API on http://localhost:4000/v1
+[31m[Nest] 2960247  - [39m14/10/2025, 16:15:41 [31m  ERROR[39m [38;5;3m[ExceptionsHandler] [39m[31mTiny ERP error 404 (Not Found): File not found.
+[39m
+Error: Tiny ERP error 404 (Not Found): File not found.
 
-ReferenceError: exports is not defined in ES module scope
-This file is being treated as an ES module because it has a '.js' file extension and '/media/dev/Servidor/sistema-dre/apps/api/package.json' contains "type": "module". To treat it as a CommonJS script, rename it to use the '.cjs' file extension.
-    at [90mfile:///media/dev/Servidor/sistema-dre/apps/api/[39mdist/main.js:38:23
-[90m    at ModuleJob.run (node:internal/modules/esm/module_job:345:25)[39m
-[90m    at async onImport.tracePromise.__proto__ (node:internal/modules/esm/loader:665:26)[39m
-[90m    at async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:117:5)[39m
+    at TinyClient.post (/media/dev/Servidor/sistema-dre/apps/api/dist/integrations/tiny/tiny-client.js:52:19)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async TinyIntegrationService.collect (/media/dev/Servidor/sistema-dre/apps/api/dist/integrations/tiny/tiny.service.js:50:29)
+    at async TinyIntegrationService.sync (/media/dev/Servidor/sistema-dre/apps/api/dist/integrations/tiny/tiny.service.js:37:28)
+    at async /media/dev/Servidor/sistema-dre/node_modules/.pnpm/@nestjs+core@10.4.20_@nestjs+common@10.4.20_reflect-metadata@0.2.2_rxjs@7.8.2__@nestjs+_1031b346502275d0fd746cdba7b0b7f6/node_modules/@nestjs/core/router/router-execution-context.js:46:28
+    at async /media/dev/Servidor/sistema-dre/node_modules/.pnpm/@nestjs+core@10.4.20_@nestjs+common@10.4.20_reflect-metadata@0.2.2_rxjs@7.8.2__@nestjs+_1031b346502275d0fd746cdba7b0b7f6/node_modules/@nestjs/core/router/router-proxy.js:9:17
+[2J[3J[H[[90m16:18:57[0m] File change detected. Starting incremental compilation...
 
-Node.js v22.20.0
-[2J[3J[H[[90m14:56:37[0m] File change detected. Starting incremental compilation...
+[[90m16:18:57[0m] Found 0 errors. Watching for file changes.
 
-[[90m14:56:37[0m] Found 0 errors. Watching for file changes.
+[32m[Nest] 2970115  - [39m14/10/2025, 16:18:57 [32m    LOG[39m [38;5;3m[NestFactory] [39m[32mStarting Nest application...[39m
+[32m[Nest] 2970115  - [39m14/10/2025, 16:18:57 [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mPrismaModule dependencies initialized[39m[38;5;3m +9ms[39m
+[32m[Nest] 2970115  - [39m14/10/2025, 16:18:57 [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mAppModule dependencies initialized[39m[38;5;3m +0ms[39m
+[32m[Nest] 2970115  - [39m14/10/2025, 16:18:57 [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mDREModule dependencies initialized[39m[38;5;3m +1ms[39m
+[32m[Nest] 2970115  - [39m14/10/2025, 16:18:57 [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mTinyModule dependencies initialized[39m[38;5;3m +0ms[39m
+[32m[Nest] 2970115  - [39m14/10/2025, 16:18:57 [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mImportModule dependencies initialized[39m[38;5;3m +0ms[39m
+[32m[Nest] 2970115  - [39m14/10/2025, 16:18:57 [32m    LOG[39m [38;5;3m[RoutesResolver] [39m[32mAppController {/v1}:[39m[38;5;3m +3ms[39m
+[32m[Nest] 2970115  - [39m14/10/2025, 16:18:57 [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/v1, GET} route[39m[38;5;3m +2ms[39m
+[32m[Nest] 2970115  - [39m14/10/2025, 16:18:57 [32m    LOG[39m [38;5;3m[RoutesResolver] [39m[32mDREController {/v1/dre}:[39m[38;5;3m +0ms[39m
+[32m[Nest] 2970115  - [39m14/10/2025, 16:18:57 [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/v1/dre, GET} route[39m[38;5;3m +1ms[39m
+[32m[Nest] 2970115  - [39m14/10/2025, 16:18:57 [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/v1/dre/filters, GET} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 2970115  - [39m14/10/2025, 16:18:57 [32m    LOG[39m [38;5;3m[RoutesResolver] [39m[32mImportController {/v1/tenants/:id/import}:[39m[38;5;3m +0ms[39m
+[32m[Nest] 2970115  - [39m14/10/2025, 16:18:57 [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/v1/tenants/:id/import, POST} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 2970115  - [39m14/10/2025, 16:18:57 [32m    LOG[39m [38;5;3m[RoutesResolver] [39m[32mTinyController {/v1/tenants/:tenantId/tiny}:[39m[38;5;3m +0ms[39m
+[32m[Nest] 2970115  - [39m14/10/2025, 16:18:57 [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/v1/tenants/:tenantId/tiny/sync, POST} route[39m[38;5;3m +1ms[39m
+[32m[Nest] 2970115  - [39m14/10/2025, 16:18:57 [32m    LOG[39m [38;5;3m[NestApplication] [39m[32mNest application successfully started[39m[38;5;3m +50ms[39m
+API on http://localhost:4000/v1
+[2J[3J[H[[90m16:20:31[0m] File change detected. Starting incremental compilation...
 
-file:///media/dev/Servidor/sistema-dre/apps/api/dist/main.js:38
-Object.defineProperty(exports, "__esModule", { value: true });
-                      ^
+[96msrc/integrations/tiny/tiny-config.service.ts[0m:[93m19[0m:[93m24[0m - [91merror[0m[90m TS2339: [0mProperty 'tinyIntegrationConfig' does not exist on type 'PrismaService'.
 
-ReferenceError: exports is not defined in ES module scope
-This file is being treated as an ES module because it has a '.js' file extension and '/media/dev/Servidor/sistema-dre/apps/api/package.json' contains "type": "module". To treat it as a CommonJS script, rename it to use the '.cjs' file extension.
-    at [90mfile:///media/dev/Servidor/sistema-dre/apps/api/[39mdist/main.js:38:23
-[90m    at ModuleJob.run (node:internal/modules/esm/module_job:345:25)[39m
-[90m    at async onImport.tracePromise.__proto__ (node:internal/modules/esm/loader:665:26)[39m
-[90m    at async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:117:5)[39m
+[7m19[0m     return this.prisma.tinyIntegrationConfig.upsert({
+[7m  [0m [91m                       ~~~~~~~~~~~~~~~~~~~~~[0m
 
-Node.js v22.20.0
+[96msrc/integrations/tiny/tiny-config.service.ts[0m:[93m40[0m:[93m24[0m - [91merror[0m[90m TS2339: [0mProperty 'tinyIntegrationConfig' does not exist on type 'PrismaService'.
+
+[7m40[0m     return this.prisma.tinyIntegrationConfig.findMany({
+[7m  [0m [91m                       ~~~~~~~~~~~~~~~~~~~~~[0m
+
+[96msrc/integrations/tiny/tiny-config.service.ts[0m:[93m46[0m:[93m24[0m - [91merror[0m[90m TS2339: [0mProperty 'tinyIntegrationConfig' does not exist on type 'PrismaService'.
+
+[7m46[0m     return this.prisma.tinyIntegrationConfig.update({
+[7m  [0m [91m                       ~~~~~~~~~~~~~~~~~~~~~[0m
+
+[96msrc/integrations/tiny/tiny-config.service.ts[0m:[93m56[0m:[93m24[0m - [91merror[0m[90m TS2339: [0mProperty 'tinyIntegrationConfig' does not exist on type 'PrismaService'.
+
+[7m56[0m     return this.prisma.tinyIntegrationConfig.findUnique({
+[7m  [0m [91m                       ~~~~~~~~~~~~~~~~~~~~~[0m
+
+[[90m16:20:32[0m] Found 4 errors. Watching for file changes.
+
+[2J[3J[H[[90m16:20:44[0m] File change detected. Starting incremental compilation...
+
+[96msrc/integrations/tiny/tiny-config.service.ts[0m:[93m19[0m:[93m24[0m - [91merror[0m[90m TS2339: [0mProperty 'tinyIntegrationConfig' does not exist on type 'PrismaService'.
+
+[7m19[0m     return this.prisma.tinyIntegrationConfig.upsert({
+[7m  [0m [91m                       ~~~~~~~~~~~~~~~~~~~~~[0m
+
+[96msrc/integrations/tiny/tiny-config.service.ts[0m:[93m40[0m:[93m24[0m - [91merror[0m[90m TS2339: [0mProperty 'tinyIntegrationConfig' does not exist on type 'PrismaService'.
+
+[7m40[0m     return this.prisma.tinyIntegrationConfig.findMany({
+[7m  [0m [91m                       ~~~~~~~~~~~~~~~~~~~~~[0m
+
+[96msrc/integrations/tiny/tiny-config.service.ts[0m:[93m46[0m:[93m24[0m - [91merror[0m[90m TS2339: [0mProperty 'tinyIntegrationConfig' does not exist on type 'PrismaService'.
+
+[7m46[0m     return this.prisma.tinyIntegrationConfig.update({
+[7m  [0m [91m                       ~~~~~~~~~~~~~~~~~~~~~[0m
+
+[96msrc/integrations/tiny/tiny-config.service.ts[0m:[93m56[0m:[93m24[0m - [91merror[0m[90m TS2339: [0mProperty 'tinyIntegrationConfig' does not exist on type 'PrismaService'.
+
+[7m56[0m     return this.prisma.tinyIntegrationConfig.findUnique({
+[7m  [0m [91m                       ~~~~~~~~~~~~~~~~~~~~~[0m
+
+[96msrc/integrations/tiny/tiny.module.ts[0m:[93m4[0m:[93m38[0m - [91merror[0m[90m TS2307: [0mCannot find module './tiny.scheduler' or its corresponding type declarations.
+
+[7m4[0m import { TinySchedulerService } from './tiny.scheduler';
+[7m [0m [91m                                     ~~~~~~~~~~~~~~~~~~[0m
+
+[[90m16:20:44[0m] Found 5 errors. Watching for file changes.
+
+[2J[3J[H[[90m16:21:01[0m] File change detected. Starting incremental compilation...
+
+[96msrc/integrations/tiny/tiny-config.service.ts[0m:[93m19[0m:[93m24[0m - [91merror[0m[90m TS2339: [0mProperty 'tinyIntegrationConfig' does not exist on type 'PrismaService'.
+
+[7m19[0m     return this.prisma.tinyIntegrationConfig.upsert({
+[7m  [0m [91m                       ~~~~~~~~~~~~~~~~~~~~~[0m
+
+[96msrc/integrations/tiny/tiny-config.service.ts[0m:[93m40[0m:[93m24[0m - [91merror[0m[90m TS2339: [0mProperty 'tinyIntegrationConfig' does not exist on type 'PrismaService'.
+
+[7m40[0m     return this.prisma.tinyIntegrationConfig.findMany({
+[7m  [0m [91m                       ~~~~~~~~~~~~~~~~~~~~~[0m
+
+[96msrc/integrations/tiny/tiny-config.service.ts[0m:[93m46[0m:[93m24[0m - [91merror[0m[90m TS2339: [0mProperty 'tinyIntegrationConfig' does not exist on type 'PrismaService'.
+
+[7m46[0m     return this.prisma.tinyIntegrationConfig.update({
+[7m  [0m [91m                       ~~~~~~~~~~~~~~~~~~~~~[0m
+
+[96msrc/integrations/tiny/tiny-config.service.ts[0m:[93m56[0m:[93m24[0m - [91merror[0m[90m TS2339: [0mProperty 'tinyIntegrationConfig' does not exist on type 'PrismaService'.
+
+[7m56[0m     return this.prisma.tinyIntegrationConfig.findUnique({
+[7m  [0m [91m                       ~~~~~~~~~~~~~~~~~~~~~[0m
+
+[[90m16:21:01[0m] Found 4 errors. Watching for file changes.
+
+[2J[3J[H[[90m16:21:13[0m] File change detected. Starting incremental compilation...
+
+[96msrc/integrations/tiny/tiny-config.service.ts[0m:[93m19[0m:[93m24[0m - [91merror[0m[90m TS2339: [0mProperty 'tinyIntegrationConfig' does not exist on type 'PrismaService'.
+
+[7m19[0m     return this.prisma.tinyIntegrationConfig.upsert({
+[7m  [0m [91m                       ~~~~~~~~~~~~~~~~~~~~~[0m
+
+[96msrc/integrations/tiny/tiny-config.service.ts[0m:[93m40[0m:[93m24[0m - [91merror[0m[90m TS2339: [0mProperty 'tinyIntegrationConfig' does not exist on type 'PrismaService'.
+
+[7m40[0m     return this.prisma.tinyIntegrationConfig.findMany({
+[7m  [0m [91m                       ~~~~~~~~~~~~~~~~~~~~~[0m
+
+[96msrc/integrations/tiny/tiny-config.service.ts[0m:[93m46[0m:[93m24[0m - [91merror[0m[90m TS2339: [0mProperty 'tinyIntegrationConfig' does not exist on type 'PrismaService'.
+
+[7m46[0m     return this.prisma.tinyIntegrationConfig.update({
+[7m  [0m [91m                       ~~~~~~~~~~~~~~~~~~~~~[0m
+
+[96msrc/integrations/tiny/tiny-config.service.ts[0m:[93m56[0m:[93m24[0m - [91merror[0m[90m TS2339: [0mProperty 'tinyIntegrationConfig' does not exist on type 'PrismaService'.
+
+[7m56[0m     return this.prisma.tinyIntegrationConfig.findUnique({
+[7m  [0m [91m                       ~~~~~~~~~~~~~~~~~~~~~[0m
+
+[[90m16:21:13[0m] Found 4 errors. Watching for file changes.
+
+[2J[3J[H[[90m16:21:49[0m] File change detected. Starting incremental compilation...
+
+[96msrc/integrations/tiny/tiny-config.service.ts[0m:[93m19[0m:[93m24[0m - [91merror[0m[90m TS2339: [0mProperty 'tinyIntegrationConfig' does not exist on type 'PrismaService'.
+
+[7m19[0m     return this.prisma.tinyIntegrationConfig.upsert({
+[7m  [0m [91m                       ~~~~~~~~~~~~~~~~~~~~~[0m
+
+[96msrc/integrations/tiny/tiny-config.service.ts[0m:[93m40[0m:[93m24[0m - [91merror[0m[90m TS2339: [0mProperty 'tinyIntegrationConfig' does not exist on type 'PrismaService'.
+
+[7m40[0m     return this.prisma.tinyIntegrationConfig.findMany({
+[7m  [0m [91m                       ~~~~~~~~~~~~~~~~~~~~~[0m
+
+[96msrc/integrations/tiny/tiny-config.service.ts[0m:[93m46[0m:[93m24[0m - [91merror[0m[90m TS2339: [0mProperty 'tinyIntegrationConfig' does not exist on type 'PrismaService'.
+
+[7m46[0m     return this.prisma.tinyIntegrationConfig.update({
+[7m  [0m [91m                       ~~~~~~~~~~~~~~~~~~~~~[0m
+
+[96msrc/integrations/tiny/tiny-config.service.ts[0m:[93m56[0m:[93m24[0m - [91merror[0m[90m TS2339: [0mProperty 'tinyIntegrationConfig' does not exist on type 'PrismaService'.
+
+[7m56[0m     return this.prisma.tinyIntegrationConfig.findUnique({
+[7m  [0m [91m                       ~~~~~~~~~~~~~~~~~~~~~[0m
+
+[[90m16:21:49[0m] Found 4 errors. Watching for file changes.
+
+[2J[3J[H[[90m16:22:02[0m] File change detected. Starting incremental compilation...
+
+[96msrc/integrations/tiny/tiny-config.service.ts[0m:[93m19[0m:[93m24[0m - [91merror[0m[90m TS2339: [0mProperty 'tinyIntegrationConfig' does not exist on type 'PrismaService'.
+
+[7m19[0m     return this.prisma.tinyIntegrationConfig.upsert({
+[7m  [0m [91m                       ~~~~~~~~~~~~~~~~~~~~~[0m
+
+[96msrc/integrations/tiny/tiny-config.service.ts[0m:[93m40[0m:[93m24[0m - [91merror[0m[90m TS2339: [0mProperty 'tinyIntegrationConfig' does not exist on type 'PrismaService'.
+
+[7m40[0m     return this.prisma.tinyIntegrationConfig.findMany({
+[7m  [0m [91m                       ~~~~~~~~~~~~~~~~~~~~~[0m
+
+[96msrc/integrations/tiny/tiny-config.service.ts[0m:[93m46[0m:[93m24[0m - [91merror[0m[90m TS2339: [0mProperty 'tinyIntegrationConfig' does not exist on type 'PrismaService'.
+
+[7m46[0m     return this.prisma.tinyIntegrationConfig.update({
+[7m  [0m [91m                       ~~~~~~~~~~~~~~~~~~~~~[0m
+
+[96msrc/integrations/tiny/tiny-config.service.ts[0m:[93m56[0m:[93m24[0m - [91merror[0m[90m TS2339: [0mProperty 'tinyIntegrationConfig' does not exist on type 'PrismaService'.
+
+[7m56[0m     return this.prisma.tinyIntegrationConfig.findUnique({
+[7m  [0m [91m                       ~~~~~~~~~~~~~~~~~~~~~[0m
+
+[[90m16:22:02[0m] Found 4 errors. Watching for file changes.
+
+[2J[3J[H[[90m16:22:32[0m] File change detected. Starting incremental compilation...
+
+[96msrc/integrations/tiny/tiny-config.service.ts[0m:[93m19[0m:[93m24[0m - [91merror[0m[90m TS2339: [0mProperty 'tinyIntegrationConfig' does not exist on type 'PrismaService'.
+
+[7m19[0m     return this.prisma.tinyIntegrationConfig.upsert({
+[7m  [0m [91m                       ~~~~~~~~~~~~~~~~~~~~~[0m
+
+[96msrc/integrations/tiny/tiny-config.service.ts[0m:[93m40[0m:[93m24[0m - [91merror[0m[90m TS2339: [0mProperty 'tinyIntegrationConfig' does not exist on type 'PrismaService'.
+
+[7m40[0m     return this.prisma.tinyIntegrationConfig.findMany({
+[7m  [0m [91m                       ~~~~~~~~~~~~~~~~~~~~~[0m
+
+[96msrc/integrations/tiny/tiny-config.service.ts[0m:[93m46[0m:[93m38[0m - [91merror[0m[90m TS2339: [0mProperty 'tinyIntegrationConfig' does not exist on type 'PrismaService'.
+
+[7m46[0m     const config = await this.prisma.tinyIntegrationConfig.findUnique({
+[7m  [0m [91m                                     ~~~~~~~~~~~~~~~~~~~~~[0m
+
+[96msrc/integrations/tiny/tiny-config.service.ts[0m:[93m51[0m:[93m24[0m - [91merror[0m[90m TS2339: [0mProperty 'tinyIntegrationConfig' does not exist on type 'PrismaService'.
+
+[7m51[0m     return this.prisma.tinyIntegrationConfig.update({
+[7m  [0m [91m                       ~~~~~~~~~~~~~~~~~~~~~[0m
+
+[96msrc/integrations/tiny/tiny-config.service.ts[0m:[93m61[0m:[93m24[0m - [91merror[0m[90m TS2339: [0mProperty 'tinyIntegrationConfig' does not exist on type 'PrismaService'.
+
+[7m61[0m     return this.prisma.tinyIntegrationConfig.findUnique({
+[7m  [0m [91m                       ~~~~~~~~~~~~~~~~~~~~~[0m
+
+[[90m16:22:32[0m] Found 5 errors. Watching for file changes.
+
+[2J[3J[H[[90m16:22:48[0m] File change detected. Starting incremental compilation...
+
+[96msrc/integrations/tiny/tiny-config.service.ts[0m:[93m19[0m:[93m24[0m - [91merror[0m[90m TS2339: [0mProperty 'tinyIntegrationConfig' does not exist on type 'PrismaService'.
+
+[7m19[0m     return this.prisma.tinyIntegrationConfig.upsert({
+[7m  [0m [91m                       ~~~~~~~~~~~~~~~~~~~~~[0m
+
+[96msrc/integrations/tiny/tiny-config.service.ts[0m:[93m40[0m:[93m24[0m - [91merror[0m[90m TS2339: [0mProperty 'tinyIntegrationConfig' does not exist on type 'PrismaService'.
+
+[7m40[0m     return this.prisma.tinyIntegrationConfig.findMany({
+[7m  [0m [91m                       ~~~~~~~~~~~~~~~~~~~~~[0m
+
+[96msrc/integrations/tiny/tiny-config.service.ts[0m:[93m46[0m:[93m38[0m - [91merror[0m[90m TS2339: [0mProperty 'tinyIntegrationConfig' does not exist on type 'PrismaService'.
+
+[7m46[0m     const config = await this.prisma.tinyIntegrationConfig.findUnique({
+[7m  [0m [91m                                     ~~~~~~~~~~~~~~~~~~~~~[0m
+
+[96msrc/integrations/tiny/tiny-config.service.ts[0m:[93m51[0m:[93m24[0m - [91merror[0m[90m TS2339: [0mProperty 'tinyIntegrationConfig' does not exist on type 'PrismaService'.
+
+[7m51[0m     return this.prisma.tinyIntegrationConfig.update({
+[7m  [0m [91m                       ~~~~~~~~~~~~~~~~~~~~~[0m
+
+[96msrc/integrations/tiny/tiny-config.service.ts[0m:[93m61[0m:[93m24[0m - [91merror[0m[90m TS2339: [0mProperty 'tinyIntegrationConfig' does not exist on type 'PrismaService'.
+
+[7m61[0m     return this.prisma.tinyIntegrationConfig.findUnique({
+[7m  [0m [91m                       ~~~~~~~~~~~~~~~~~~~~~[0m
+
+[[90m16:22:48[0m] Found 5 errors. Watching for file changes.
+
+[2J[3J[H[[90m16:25:20[0m] File change detected. Starting incremental compilation...
+
+[96msrc/integrations/tiny/tiny.controller.ts[0m:[93m54[0m:[93m7[0m - [91merror[0m[90m TS2322: [0mType 'string[] | undefined' is not assignable to type 'TinyModuleKind[] | undefined'.
+  Type 'string[]' is not assignable to type 'TinyModuleKind[]'.
+    Type 'string' is not assignable to type 'TinyModuleKind'.
+
+[7m54[0m       modules: body.modules ?? existingConfig?.modules,
+[7m  [0m [91m      ~~~~~~~[0m
+
+  [96msrc/integrations/tiny/tiny.service.ts[0m:[93m16[0m:[93m3[0m
+    [7m16[0m   modules?: TinyModuleKind[];
+    [7m  [0m [96m  ~~~~~~~[0m
+    The expected type comes from property 'modules' which is declared here on type 'TinySyncOptions'
+
+[[90m16:25:20[0m] Found 1 error. Watching for file changes.
+
+[2J[3J[H[[90m16:25:52[0m] File change detected. Starting incremental compilation...
+
+[[90m16:25:52[0m] Found 0 errors. Watching for file changes.
+
+[32m[Nest] 2986891  - [39m14/10/2025, 16:25:53 [32m    LOG[39m [38;5;3m[NestFactory] [39m[32mStarting Nest application...[39m
+[32m[Nest] 2986891  - [39m14/10/2025, 16:25:53 [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mPrismaModule dependencies initialized[39m[38;5;3m +9ms[39m
+[32m[Nest] 2986891  - [39m14/10/2025, 16:25:53 [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mAppModule dependencies initialized[39m[38;5;3m +0ms[39m
+[32m[Nest] 2986891  - [39m14/10/2025, 16:25:53 [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mDREModule dependencies initialized[39m[38;5;3m +1ms[39m
+[32m[Nest] 2986891  - [39m14/10/2025, 16:25:53 [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mTinyModule dependencies initialized[39m[38;5;3m +0ms[39m
+[32m[Nest] 2986891  - [39m14/10/2025, 16:25:53 [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mImportModule dependencies initialized[39m[38;5;3m +0ms[39m
+[32m[Nest] 2986891  - [39m14/10/2025, 16:25:53 [32m    LOG[39m [38;5;3m[RoutesResolver] [39m[32mAppController {/v1}:[39m[38;5;3m +4ms[39m
+[32m[Nest] 2986891  - [39m14/10/2025, 16:25:53 [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/v1, GET} route[39m[38;5;3m +2ms[39m
+[32m[Nest] 2986891  - [39m14/10/2025, 16:25:53 [32m    LOG[39m [38;5;3m[RoutesResolver] [39m[32mDREController {/v1/dre}:[39m[38;5;3m +0ms[39m
+[32m[Nest] 2986891  - [39m14/10/2025, 16:25:53 [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/v1/dre, GET} route[39m[38;5;3m +1ms[39m
+[32m[Nest] 2986891  - [39m14/10/2025, 16:25:53 [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/v1/dre/filters, GET} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 2986891  - [39m14/10/2025, 16:25:53 [32m    LOG[39m [38;5;3m[RoutesResolver] [39m[32mImportController {/v1/tenants/:id/import}:[39m[38;5;3m +0ms[39m
+[32m[Nest] 2986891  - [39m14/10/2025, 16:25:53 [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/v1/tenants/:id/import, POST} route[39m[38;5;3m +1ms[39m
+[32m[Nest] 2986891  - [39m14/10/2025, 16:25:53 [32m    LOG[39m [38;5;3m[RoutesResolver] [39m[32mTinyController {/v1/tenants/:tenantId/tiny}:[39m[38;5;3m +0ms[39m
+[32m[Nest] 2986891  - [39m14/10/2025, 16:25:53 [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/v1/tenants/:tenantId/tiny/sync, POST} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 2986891  - [39m14/10/2025, 16:25:53 [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/v1/tenants/:tenantId/tiny/config, POST} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 2986891  - [39m14/10/2025, 16:25:53 [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/v1/tenants/:tenantId/tiny/status, GET} route[39m[38;5;3m +1ms[39m
+[32m[Nest] 2986891  - [39m14/10/2025, 16:25:53 [32m    LOG[39m [38;5;3m[NestApplication] [39m[32mNest application successfully started[39m[38;5;3m +48ms[39m
+API on http://localhost:4000/v1
+[31m[Nest] 2986891  - [39m14/10/2025, 16:25:53 [31m  ERROR[39m [38;5;3m[TinySchedulerService] [39m[31mErro ao rodar ciclo inicial do Tiny Scheduler[39m
+PrismaClientKnownRequestError: 
+Invalid `this.prisma.tinyIntegrationConfig.findMany()` invocation in
+/media/dev/Servidor/sistema-dre/apps/api/dist/integrations/tiny/tiny-config.service.js:41:50
+
+  38     });
+  39 }
+  40 findAllEnabled() {
+→ 41     return this.prisma.tinyIntegrationConfig.findMany(
+The table `public.TinyIntegrationConfig` does not exist in the current database.
+    at $n.handleRequestError (/media/dev/Servidor/sistema-dre/node_modules/.pnpm/@prisma+client@5.22.0_prisma@5.22.0/node_modules/@prisma/client/runtime/library.js:121:7315)
+    at $n.handleAndLogRequestError (/media/dev/Servidor/sistema-dre/node_modules/.pnpm/@prisma+client@5.22.0_prisma@5.22.0/node_modules/@prisma/client/runtime/library.js:121:6623)
+    at $n.request (/media/dev/Servidor/sistema-dre/node_modules/.pnpm/@prisma+client@5.22.0_prisma@5.22.0/node_modules/@prisma/client/runtime/library.js:121:6307)
+    at async l (/media/dev/Servidor/sistema-dre/node_modules/.pnpm/@prisma+client@5.22.0_prisma@5.22.0/node_modules/@prisma/client/runtime/library.js:130:9633)
+    at async TinySchedulerService.runCycle (/media/dev/Servidor/sistema-dre/apps/api/dist/integrations/tiny/tiny.scheduler.js:35:25)

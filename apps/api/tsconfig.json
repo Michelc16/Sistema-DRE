@@ -1,6 +1,7 @@
 {
-    "externds": "../../tsconfig.base.json",
+    "extends": "../../tsconfig.base.json",
     "compilerOptions": {
+        "module": "CommonJS",
         "outDir": "dist",
         "rootDir": "src",
         "experimentalDecorators": true,

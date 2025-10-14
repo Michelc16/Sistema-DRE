@@ -7,11 +7,9 @@
   - Environments: .env
 
  [32m[1m✓[22m[39m Starting...
- [32m[1m✓[22m[39m Ready in 1551ms
+ [32m[1m✓[22m[39m Ready in 1379ms
  [37m[1m○[22m[39m Compiling / ...
- [32m[1m✓[22m[39m Compiled / in 2s (508 modules)
- GET / [32m200[39m in 2178ms
- [32m[1m✓[22m[39m Compiled /integrations/tiny in 237ms (500 modules)
- [32m[1m✓[22m[39m Compiled /import in 227ms (508 modules)
- [32m[1m✓[22m[39m Compiled /dre in 165ms (514 modules)
- [32m[1m✓[22m[39m Compiled in 234ms (514 modules)
+ [32m[1m✓[22m[39m Compiled / in 551ms (494 modules)
+ GET / [32m200[39m in 682ms
+ [32m[1m✓[22m[39m Compiled /integrations/tiny in 163ms (500 modules)
+ [32m[1m✓[22m[39m Compiled /dre in 141ms (506 modules)

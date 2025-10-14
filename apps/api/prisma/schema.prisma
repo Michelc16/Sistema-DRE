@@ -46,6 +46,7 @@ model Tenant {
   orders       Order[]
   fxRates      FXRate[]
   dreSnapshots DRESnapshot[]
+  tinyConfig   TinyIntegrationConfig?
   createdAt    DateTime      @default(now())
 }
 
@@ -143,6 +144,20 @@ model DRESnapshot {
   currency  String
   values    Json
   createdAt DateTime @default(now())
+}
+
+model TinyIntegrationConfig {
+  id            String   @id @default(cuid())
+  tenant        Tenant   @relation(fields: [tenantId], references: [id])
+  tenantId      String   @unique
+  token         String
+  modules       String[]
+  enabled       Boolean  @default(true)
+  lastSyncAt    DateTime?
+  nextSyncAt    DateTime?
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
+  syncFrequency Int      @default(1440) // minutes between runs (default 24h)
 }
 
 model Invoice {

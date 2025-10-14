@@ -1,7 +1,7 @@
 import { Injectable, Logger } from '@nestjs/common';
 import { Prisma } from '@prisma/client';
 import { PrismaService } from '../../prisma/prisma.service';
-import { TinyClient, TinyListParams } from './tiny-client';
+import { TinyClient, TinySearchParams } from './tiny-client';
 import {
   mapFinancialToTransactions,
   mapInvoiceToTransactions,
@@ -42,7 +42,7 @@ export class TinyIntegrationService {
     const client = new TinyClient(options.token);
 
     for (const module of modules) {
-      const listParams: TinyListParams = {
+      const listParams: TinySearchParams = {
         updateFrom: options.from,
         issuedFrom: options.from,
         dueFrom: options.from,
@@ -63,7 +63,7 @@ export class TinyIntegrationService {
   private async collect(
     module: TinyModuleKind,
     client: TinyClient,
-    params: TinyListParams,
+    params: TinySearchParams,
   ) {
     const accumulator: any[] = [];
     for (let page = 1; page <= TinyIntegrationService.MAX_PAGES; page++) {
@@ -131,15 +131,15 @@ export class TinyIntegrationService {
   private async fetchModule(
     client: TinyClient,
     module: TinyModuleKind,
-    params: TinyListParams,
+    params: TinySearchParams,
   ) {
     switch (module) {
       case 'orders':
-        return client.listOrders(params);
+        return client.searchOrders(params);
       case 'invoices':
-        return client.listInvoices(params);
+        return client.searchInvoices(params);
       case 'financial':
-        return client.listFinancial(params);
+        return client.searchFinancial(params);
       default:
         throw new Error(`Unsupported Tiny module "${module}"`);
     }
