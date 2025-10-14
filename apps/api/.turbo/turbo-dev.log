@@ -1,0 +1,36 @@
+
+> @dre/api@0.1.0 dev /media/dev/Servidor/sistema-dre/apps/api
+> nest start --watch
+
+[2J[3J[H[[90m14:52:12[0m] Starting compilation in watch mode...
+
+[[90m14:52:14[0m] Found 0 errors. Watching for file changes.
+
+file:///media/dev/Servidor/sistema-dre/apps/api/dist/main.js:38
+Object.defineProperty(exports, "__esModule", { value: true });
+                      ^
+
+ReferenceError: exports is not defined in ES module scope
+This file is being treated as an ES module because it has a '.js' file extension and '/media/dev/Servidor/sistema-dre/apps/api/package.json' contains "type": "module". To treat it as a CommonJS script, rename it to use the '.cjs' file extension.
+    at [90mfile:///media/dev/Servidor/sistema-dre/apps/api/[39mdist/main.js:38:23
+[90m    at ModuleJob.run (node:internal/modules/esm/module_job:345:25)[39m
+[90m    at async onImport.tracePromise.__proto__ (node:internal/modules/esm/loader:665:26)[39m
+[90m    at async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:117:5)[39m
+
+Node.js v22.20.0
+[2J[3J[H[[90m14:56:37[0m] File change detected. Starting incremental compilation...
+
+[[90m14:56:37[0m] Found 0 errors. Watching for file changes.
+
+file:///media/dev/Servidor/sistema-dre/apps/api/dist/main.js:38
+Object.defineProperty(exports, "__esModule", { value: true });
+                      ^
+
+ReferenceError: exports is not defined in ES module scope
+This file is being treated as an ES module because it has a '.js' file extension and '/media/dev/Servidor/sistema-dre/apps/api/package.json' contains "type": "module". To treat it as a CommonJS script, rename it to use the '.cjs' file extension.
+    at [90mfile:///media/dev/Servidor/sistema-dre/apps/api/[39mdist/main.js:38:23
+[90m    at ModuleJob.run (node:internal/modules/esm/module_job:345:25)[39m
+[90m    at async onImport.tracePromise.__proto__ (node:internal/modules/esm/loader:665:26)[39m
+[90m    at async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:117:5)[39m
+
+Node.js v22.20.0

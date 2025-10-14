@@ -20,7 +20,7 @@ async function main() {
 
     for (const acc of pcg) {
         await prisma.pCGAccount.upsert({
-            where: { id: '${tenant.id}-${acc.code}' },
+            where: { id: `${tenant.id}-${acc.code}` },
             update: {},
             create: { id: `${tenant.id}-${acc.code}`, tenantId: tenant.id, ...acc }
         });
@@ -29,4 +29,6 @@ async function main() {
     console.log('Seed ok');
 }
 
-main().finally(() => prisma.$disconnect());
+main()
+.catch((e) => console.error(e))
+.finally(async () => await prisma.$disconnect());

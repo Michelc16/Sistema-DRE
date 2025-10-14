@@ -1,5 +1,10 @@
 import { Module } from '@nestjs/common';
-import { TinyClient } from './TinyClient';
+import { TinyIntegrationService } from './tiny.service';
+import { TinyController } from './tiny.controller';
 
-@Module({ providers: [TinyClient], exports: [TinyClient] })
+@Module({
+  controllers: [TinyController],
+  providers: [TinyIntegrationService],
+  exports: [TinyIntegrationService],
+})
 export class TinyModule {}

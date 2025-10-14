@@ -1,134 +1,164 @@
 generator client {
-    provider = "prisma-client-js"
+  provider = "prisma-client-js"
 }
 
 datasource db {
-    provider = "postgresql"
-    url      = env("DATABASE_URL")
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
 }
 
-enum Role { OWNER FINANCE AUDITOR VIEWER }
+enum Role {
+  OWNER
+  FINANCE
+  AUDITOR
+  VIEWER
+}
 
-enum DataSourceKind { TINY CSV WEBHOOK }
+enum DataSourceKind {
+  TINY
+  CSV
+  WEBHOOK
+}
 
-enum PCGType { REVENUE DEDUCTION COGS OPEX OTHER INCOME EXPENSE TAX RESULT }
+enum PCGType {
+  REVENUE
+  DEDUCTION
+  COGS
+  OPEX
+  OTHER
+  INCOME
+  EXPENSE
+  TAX
+  RESULT
+}
 
-model Tenat {
-    id           String   @id @default(cuid())
-    name         String
-    cnpj         String?
-    users        UserTenant[]
-    dataSources  DataSource[]
-    accounts     Account[]
-    pcgAccounts  PCGAccount[]
-    mappings     Mapping[]
-    transactions Transactions[]
-    invoices     Invoice[]
-    orders       Order[]
-    fxRates      FXRate[]
-    dreSnapshots DRESnapshot[]
-    createdAt    DateTime @default(now())
+model Tenant {
+  id           String        @id @default(cuid())
+  name         String
+  cnpj         String?
+  users        UserTenant[]
+  dataSources  DataSource[]
+  accounts     Account[]
+  pcgAccounts  PCGAccount[]
+  mappings     Mapping[]
+  transactions Transaction[]
+  invoices     Invoice[]
+  orders       Order[]
+  fxRates      FXRate[]
+  dreSnapshots DRESnapshot[]
+  createdAt    DateTime      @default(now())
 }
 
 model User {
-    id           String   @id @default(cuid())
-    email        String   @unique
-    name         String
-    tenants      UserTenant[]
-    createdAt    DataTime @default(now())
+  id        String       @id @default(cuid())
+  email     String       @unique
+  name      String
+  tenants   UserTenant[]
+  createdAt DateTime     @default(now())
 }
 
 model UserTenant {
-    id           String   @id @default(cuid())
-    user         User     @relation(fields: [userId], references: [id])
-    userId       String
-    tenant       Tenant   @relation(fields: [tenantId], references: [id])
-    tenatId      String
-    role         Role
+  id       String   @id @default(cuid())
+  user     User     @relation(fields: [userId], references: [id])
+  userId   String
+  tenant   Tenant   @relation(fields: [tenantId], references: [id])
+  tenantId String
+  role     Role
 }
 
 model DataSource {
-    id           String    @id @default(cuid())
-    tenant       Tenant    @relation(fields: [tenatId], references: [id])
-    tenantId     String
-    code         String
-    name         String
-    level        Int
-    parentId     String?
-    pcgAccount   PCGAccount? @relation(fields: [pcgAccountId], references: [id])
-    pcgAccountId String?
+  id           String        @id @default(cuid())
+  tenant       Tenant        @relation(fields: [tenantId], references: [id])
+  tenantId     String
+  code         String
+  name         String
+  kind         DataSourceKind
+  level        Int
+  parentId     String?
+  pcgAccount   PCGAccount?   @relation(fields: [pcgAccountId], references: [id])
+  pcgAccountId String?
+}
+
+model Account {
+  id        String     @id @default(cuid())
+  tenant    Tenant     @relation(fields: [tenantId], references: [id])
+  tenantId  String
+  code      String
+  name      String
+  parentId  String?
 }
 
 model PCGAccount {
-    id           String     @id @default(cuid())
-    tenant       Tenant     @relation(fields: [tenatId], references: [id])
-    tenantId     String
-    code         String
-    name         String
-    type         PCGType
-    parentId     String?
+  id          String        @id @default(cuid())
+  tenant      Tenant        @relation(fields: [tenantId], references: [id])
+  tenantId    String
+  code        String
+  name        String
+  type        PCGType
+  parentId    String?
+  dataSources DataSource[]
 }
 
 model Mapping {
-    id           String     @id @default(cuid())
-    tenant       Tenant     @relation(fields: [tenantId], references: [id])
-    tenantId     String
-    accountId    String
-    rules        Json
-    pcgId        String
+  id        String     @id @default(cuid())
+  tenant    Tenant     @relation(fields: [tenantId], references: [id])
+  tenantId  String
+  accountId String
+  rules     Json
+  pcgId     String
 }
 
 model Transaction {
-    id           String     @id @default(cuid())
-    tenant       Tenant     @relation(fields: [tenatId], references: [id])
-    tenantId     String
-    date         DateTime
-    accrualDate  DateTime?
-    debit        String
-    credit       String
-    amount       Decimal
-    currency     String     @default("BRL")
-    memo         String?
-    origin       String
-    sourceRef    String?
-    meta         Json?
+  id           String     @id @default(cuid())
+  tenant       Tenant     @relation(fields: [tenantId], references: [id])
+  tenantId     String
+  date         DateTime
+  accrualDate  DateTime?
+  debit        String
+  credit       String
+  amount       Decimal
+  currency     String     @default("BRL")
+  memo         String?
+  origin       String
+  sourceRef    String?
+  meta         Json?
 }
 
 model FXRate {
-    id           String     @id @default(cuid())
-    tenant       Tenant     @relation(fields: [tenantId], references: [id])
-    tenantId     String
-    date         DateTime
-    from         String
-    to           String
-    rate         Decimal
+  id       String   @id @default(cuid())
+  tenant   Tenant   @relation(fields: [tenantId], references: [id])
+  tenantId String
+  date     DateTime
+  from     String
+  to       String
+  rate     Decimal
 }
 
 model DRESnapshot {
-    id           String      @id @default(cuid())
-    tenant       Tenant      @relation(fields: [tenantId], references: [id])
-    tenantId     String
-    period       String
-    basis        String
-    currency     String
-    values       Json
-    createdAt    DateTime    @default(now())
+  id        String   @id @default(cuid())
+  tenant    Tenant   @relation(fields: [tenantId], references: [id])
+  tenantId  String
+  period    String
+  basis     String
+  currency  String
+  values    Json
+  createdAt DateTime @default(now())
 }
 
 model Invoice {
-    id           String      @id @default(cuid())
-    tenant       Tenant      @relation(fields: [tenantId], references: [id])
-    tenantId     String
-    number       String
-    issueDate    DateTime
-    total        Decimal
+  id        String   @id @default(cuid())
+  tenant    Tenant   @relation(fields: [tenantId], references: [id])
+  tenantId  String
+  number    String
+  issueDate DateTime
+  total     Decimal
 }
 
 model Order {
-    id           String      @id @default(cuid())
-    tenant       Tenant      @relation(fields: [tenantId], references: [id])
-    tenantId     String
-    number       String
-    issueDate    DateTime
-    total        Decimal
+  id        String   @id @default(cuid())
+  tenant    Tenant   @relation(fields: [tenantId], references: [id])
+  tenantId  String
+  number    String
+  issueDate DateTime
+  total     Decimal
 }
