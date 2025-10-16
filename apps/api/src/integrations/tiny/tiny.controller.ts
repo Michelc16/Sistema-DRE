@@ -54,11 +54,18 @@ export class TinyController {
       });
     }
 
+    const dateFilter = body.from;
     const result = await this.tinyService.sync({
       tenantId,
       token,
-      modules: body.modules ?? modulesFromConfig,
-      from: body.from,
+      modules:
+        body.modules && body.modules.length
+          ? body.modules
+          : modulesFromConfig.length
+          ? modulesFromConfig
+          : undefined,
+      updateFrom: dateFilter,
+      issuedFrom: dateFilter,
       pageSize: body.pageSize,
     });
     if (existingConfig) {
@@ -72,10 +79,15 @@ export class TinyController {
     @Param('tenantId') tenantId: string,
     @Body() body: TinyConfigBody,
   ) {
+    const modules: TinyModuleKind[] =
+      body.modules && body.modules.length
+        ? body.modules
+        : (['orders'] as TinyModuleKind[]);
+
     return this.configService.upsertConfig({
       tenantId,
       token: body.token,
-      modules: body.modules ?? ['orders'],
+      modules,
       enabled: body.enabled,
       syncFrequency: body.syncFrequency,
     });

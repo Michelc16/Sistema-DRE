@@ -110,19 +110,21 @@ model Mapping {
 }
 
 model Transaction {
-  id           String     @id @default(cuid())
-  tenant       Tenant     @relation(fields: [tenantId], references: [id])
-  tenantId     String
-  date         DateTime
-  accrualDate  DateTime?
-  debit        String
-  credit       String
-  amount       Decimal
-  currency     String     @default("BRL")
-  memo         String?
-  origin       String
-  sourceRef    String?
-  meta         Json?
+  id          String   @id @default(cuid())
+  tenant      Tenant   @relation(fields: [tenantId], references: [id])
+  tenantId    String
+  date        DateTime
+  accrualDate DateTime?
+  debit       String
+  credit      String
+  amount      Decimal
+  currency    String   @default("BRL")
+  memo        String?
+  origin      String   // ex.: "ERP:Tiny:orders", "ERP:Tiny:financial"
+  sourceRef   String?  // referência única do Tiny
+  meta        Json?
+  @@unique([tenantId, origin, sourceRef])
+  @@index([tenantId, date])
 }
 
 model FXRate {
@@ -161,19 +163,27 @@ model TinyIntegrationConfig {
 }
 
 model Invoice {
-  id        String   @id @default(cuid())
-  tenant    Tenant   @relation(fields: [tenantId], references: [id])
-  tenantId  String
-  number    String
-  issueDate DateTime
-  total     Decimal
+  id         String   @id @default(cuid())
+  tenant     Tenant   @relation(fields: [tenantId], references: [id])
+  tenantId   String
+  number     String
+  issueDate  DateTime
+  total      Decimal
+  externalId String   // identificador da nota no Tiny
+  origin     String   @default("ERP:Tiny:invoice")
+  sourceRef  String?
+  @@unique([tenantId, externalId])
 }
 
 model Order {
-  id        String   @id @default(cuid())
-  tenant    Tenant   @relation(fields: [tenantId], references: [id])
-  tenantId  String
-  number    String
-  issueDate DateTime
-  total     Decimal
+  id         String   @id @default(cuid())
+  tenant     Tenant   @relation(fields: [tenantId], references: [id])
+  tenantId   String
+  number     String
+  issueDate  DateTime
+  total      Decimal
+  externalId String   // identificador do pedido no Tiny
+  origin     String   @default("ERP:Tiny:order")
+  sourceRef  String?
+  @@unique([tenantId, externalId])
 }

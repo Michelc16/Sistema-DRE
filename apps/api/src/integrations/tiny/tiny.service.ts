@@ -14,7 +14,14 @@ export interface TinySyncOptions {
   tenantId: string;
   token: string;
   modules?: TinyModuleKind[];
-  from?: string;
+  /** Registros atualizados a partir desta data (YYYY-MM-DD) */
+  updateFrom?: string;
+  /** Registros atualizados até esta data (YYYY-MM-DD) */
+  updateTo?: string;
+  /** Registros emitidos a partir desta data (YYYY-MM-DD) */
+  issuedFrom?: string;
+  /** Registros emitidos até esta data (YYYY-MM-DD) */
+  issuedTo?: string;
   pageSize?: number;
 }
 
@@ -27,8 +34,9 @@ export interface TinySyncResult {
 @Injectable()
 export class TinyIntegrationService {
   private readonly logger = new Logger(TinyIntegrationService.name);
-  private static readonly DEFAULT_PAGE_SIZE = 50;
-  private static readonly MAX_PAGES = 20;
+  // O Tiny retorna até 100 registros por página por padrão【269680029802184†L341-L343】.
+  // Ajuste o tamanho padrão para 100 e remova o limite artificial de páginas.
+  private static readonly DEFAULT_PAGE_SIZE = 100;
 
   constructor(private readonly prisma: PrismaService) {}
 
@@ -43,8 +51,10 @@ export class TinyIntegrationService {
 
     for (const module of modules) {
       const listParams = {
-        updateFrom: options.from,
-        issuedFrom: options.from,
+        updateFrom: options.updateFrom,
+        updateTo: options.updateTo,
+        issuedFrom: options.issuedFrom,
+        issuedTo: options.issuedTo,
         pageSize: options.pageSize ?? TinyIntegrationService.DEFAULT_PAGE_SIZE,
       };
       const pulled = await this.collect(module, client, listParams);
@@ -62,26 +72,38 @@ export class TinyIntegrationService {
   private async collect(
     module: TinyModuleKind,
     client: TinyClient,
-    params: { updateFrom?: string; issuedFrom?: string; pageSize?: number },
+    params: {
+      updateFrom?: string;
+      updateTo?: string;
+      issuedFrom?: string;
+      issuedTo?: string;
+      dueFrom?: string;
+      dueTo?: string;
+      pageSize?: number;
+      page?: number;
+    },
   ) {
     const accumulator: any[] = [];
-    for (let page = 1; page <= TinyIntegrationService.MAX_PAGES; page++) {
-      const summaries = await this.fetchModule(client, module, { ...params, page });
-      if (!summaries.length) break;
+    let page = 1;
+    const pageSize = params.pageSize ?? TinyIntegrationService.DEFAULT_PAGE_SIZE;
 
+    // Percorre todas as páginas até que a última retorne menos registros que o pageSize.
+    while (true) {
+      const summaries = await this.fetchModule(client, module, {
+        ...params,
+        page,
+      });
+      if (!summaries.length) break;
+      // Busca os detalhes de cada item resumido.
       for (const summary of summaries) {
         const detail = await this.fetchDetail(client, module, summary);
         if (detail) accumulator.push(detail);
       }
-
-      if (
-        summaries.length <
-        (params.pageSize ?? TinyIntegrationService.DEFAULT_PAGE_SIZE)
-      ) {
-        break;
-      }
+      // Se a quantidade de registros retornados for menor que o tamanho da página,
+      // significa que chegamos à última página.
+      if (summaries.length < pageSize) break;
+      page++;
     }
-
     return accumulator;
   }
 
@@ -211,7 +233,14 @@ export class TinyIntegrationService {
   private async fetchModule(
     client: TinyClient,
     module: TinyModuleKind,
-    params: { updateFrom?: string; issuedFrom?: string; pageSize?: number; page?: number },
+    params: {
+      updateFrom?: string;
+      updateTo?: string;
+      issuedFrom?: string;
+      issuedTo?: string;
+      pageSize?: number;
+      page?: number;
+    },
   ) {
     switch (module) {
       case 'orders':

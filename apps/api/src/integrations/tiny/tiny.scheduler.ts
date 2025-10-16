@@ -36,14 +36,19 @@ export class TinySchedulerService implements OnModuleInit, OnModuleDestroy {
 
       this.logger.log(`Sincronizando Tiny para tenant ${config.tenantId}`);
       try {
-        const modules = (config.modules || []) as TinyModuleKind[];
+        const modules: TinyModuleKind[] =
+          (config.modules || []).filter((module): module is TinyModuleKind =>
+            ['orders', 'invoices', 'financial'].includes(module),
+          );
+        const dateFilter = config.lastSyncAt
+          ? config.lastSyncAt.toISOString().slice(0, 10)
+          : undefined;
         await this.integrationService.sync({
           tenantId: config.tenantId,
           token: config.token,
-          modules,
-          from: config.lastSyncAt
-            ? config.lastSyncAt.toISOString().slice(0, 10)
-            : undefined,
+          modules: modules.length ? modules : undefined,
+          updateFrom: dateFilter,
+          issuedFrom: dateFilter,
         });
         await this.configService.markSync(config.tenantId);
       } catch (error: any) {

@@ -1,8 +1,31 @@
+/**
+ * Parâmetros de busca para os serviços do Tiny. Além de paginação, permitem
+ * filtrar os registros por data de emissão e por data de atualização.
+ *
+ * - page       → número da página (inicia em 1)
+ * - pageSize   → quantidade de registros por página (padrão definido no serviço)
+ * - updateFrom → data inicial para filtrar registros atualizados (YYYY-MM-DD)
+ * - updateTo   → data final para filtrar registros atualizados (YYYY-MM-DD)
+ * - issuedFrom → data inicial para filtrar registros emitidos (YYYY-MM-DD)
+ * - issuedTo   → data final para filtrar registros emitidos (YYYY-MM-DD)
+ */
 type SearchParams = {
   page?: number;
   pageSize?: number;
   updateFrom?: string;
+  updateTo?: string;
   issuedFrom?: string;
+  issuedTo?: string;
+  /**
+   * Data inicial de vencimento para contas a receber/pagar (YYYY-MM-DD).
+   * Opcional. Usado para filtrar contas pelo vencimento quando necessário.
+   */
+  dueFrom?: string;
+  /**
+   * Data final de vencimento para contas a receber/pagar (YYYY-MM-DD).
+   * Opcional. Usado para filtrar contas pelo vencimento quando necessário.
+   */
+  dueTo?: string;
 };
 
 export class TinyClient {
@@ -79,8 +102,40 @@ export class TinyClient {
 
     if (params.page) payload.set('pagina', String(params.page));
     if (params.pageSize) payload.set('limite', String(params.pageSize));
-    if (params.updateFrom) payload.set('dataInicio', params.updateFrom);
-    if (params.issuedFrom) payload.set('dataInicio', params.issuedFrom);
+    // Mapeia filtros de atualização/emissão/vencimento conforme a documentação do Tiny:
+    // Para pedidos/notas fiscais:
+    //   dataAtualizacao/dataFinalAtualizacao → intervalo de atualização
+    //   dataInicial/dataFinal → intervalo de emissão
+    // Para contas a receber/pagar:
+    //   data_ini_emissao/data_fim_emissao → intervalo de emissão
+    //   data_ini_vencimento/data_fim_vencimento → intervalo de vencimento
+    const isFinancial =
+      endpoint.startsWith('contas.receber') || endpoint.startsWith('contas.pagar');
+
+    // Função para converter data ISO (YYYY-MM-DD) em dd/mm/yyyy, conforme documentação.
+    const toTinyDate = (isoDate: string) => {
+      const parts = isoDate?.split('-');
+      return parts && parts.length === 3
+        ? `${parts[2]}/${parts[1]}/${parts[0]}`
+        : isoDate;
+    };
+
+    if (isFinancial) {
+      // Filtros de emissão para contas a receber/pagar
+      if (params.issuedFrom) payload.set('data_ini_emissao', toTinyDate(params.issuedFrom));
+      if (params.issuedTo) payload.set('data_fim_emissao', toTinyDate(params.issuedTo));
+      // Filtros de vencimento para contas a receber/pagar
+      const dueStart = params.dueFrom ?? params.updateFrom;
+      const dueEnd = params.dueTo ?? params.updateTo;
+      if (dueStart) payload.set('data_ini_vencimento', toTinyDate(dueStart));
+      if (dueEnd) payload.set('data_fim_vencimento', toTinyDate(dueEnd));
+    } else {
+      // Filtros de atualização e emissão para pedidos/notas
+      if (params.updateFrom) payload.set('dataAtualizacao', params.updateFrom);
+      if (params.updateTo) payload.set('dataFinalAtualizacao', params.updateTo);
+      if (params.issuedFrom) payload.set('dataInicial', params.issuedFrom);
+      if (params.issuedTo) payload.set('dataFinal', params.issuedTo);
+    }
 
     const response = await this.post(endpoint, payload);
     const root = response?.retorno ?? response ?? {};
@@ -106,9 +161,21 @@ export class TinyClient {
         case 'nota.fiscal.obter.php':
           return root.nota_fiscal ?? response?.nota_fiscal ?? summary;
         case 'conta.receber.obter.php':
-          return root.conta_receber ?? response?.conta_receber ?? summary;
+          return (
+            root.conta_receber ??
+            root.conta ??
+            response?.conta_receber ??
+            response?.conta ??
+            summary
+          );
         case 'conta.pagar.obter.php':
-          return root.conta_pagar ?? response?.conta_pagar ?? summary;
+          return (
+            root.conta_pagar ??
+            root.conta ??
+            response?.conta_pagar ??
+            response?.conta ??
+            summary
+          );
         default:
           return response ?? summary;
       }
