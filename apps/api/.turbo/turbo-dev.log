@@ -2,27 +2,27 @@
 > @dre/api@0.1.0 dev /media/dev/Servidor/sistema-dre/apps/api
 > nest start --watch
 
-[2J[3J[H[[90m15:54:31[0m] Starting compilation in watch mode...
+[2J[3J[H[[90m17:07:09[0m] Starting compilation in watch mode...
 
-[[90m15:54:33[0m] Found 0 errors. Watching for file changes.
+[[90m17:07:11[0m] Found 0 errors. Watching for file changes.
 
-[32m[Nest] 1892433  - [39m15/10/2025, 15:54:33 [32m    LOG[39m [38;5;3m[NestFactory] [39m[32mStarting Nest application...[39m
-[32m[Nest] 1892433  - [39m15/10/2025, 15:54:33 [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mPrismaModule dependencies initialized[39m[38;5;3m +9ms[39m
-[32m[Nest] 1892433  - [39m15/10/2025, 15:54:33 [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mAppModule dependencies initialized[39m[38;5;3m +0ms[39m
-[32m[Nest] 1892433  - [39m15/10/2025, 15:54:33 [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mDREModule dependencies initialized[39m[38;5;3m +1ms[39m
-[32m[Nest] 1892433  - [39m15/10/2025, 15:54:33 [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mTinyModule dependencies initialized[39m[38;5;3m +1ms[39m
-[32m[Nest] 1892433  - [39m15/10/2025, 15:54:33 [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mImportModule dependencies initialized[39m[38;5;3m +0ms[39m
-[32m[Nest] 1892433  - [39m15/10/2025, 15:54:33 [32m    LOG[39m [38;5;3m[RoutesResolver] [39m[32mAppController {/v1}:[39m[38;5;3m +4ms[39m
-[32m[Nest] 1892433  - [39m15/10/2025, 15:54:33 [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/v1, GET} route[39m[38;5;3m +2ms[39m
-[32m[Nest] 1892433  - [39m15/10/2025, 15:54:33 [32m    LOG[39m [38;5;3m[RoutesResolver] [39m[32mDREController {/v1/dre}:[39m[38;5;3m +0ms[39m
-[32m[Nest] 1892433  - [39m15/10/2025, 15:54:33 [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/v1/dre, GET} route[39m[38;5;3m +0ms[39m
-[32m[Nest] 1892433  - [39m15/10/2025, 15:54:33 [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/v1/dre/filters, GET} route[39m[38;5;3m +0ms[39m
-[32m[Nest] 1892433  - [39m15/10/2025, 15:54:33 [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/v1/dre/export, GET} route[39m[38;5;3m +1ms[39m
-[32m[Nest] 1892433  - [39m15/10/2025, 15:54:33 [32m    LOG[39m [38;5;3m[RoutesResolver] [39m[32mImportController {/v1/tenants/:id/import}:[39m[38;5;3m +0ms[39m
-[32m[Nest] 1892433  - [39m15/10/2025, 15:54:33 [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/v1/tenants/:id/import, POST} route[39m[38;5;3m +0ms[39m
-[32m[Nest] 1892433  - [39m15/10/2025, 15:54:33 [32m    LOG[39m [38;5;3m[RoutesResolver] [39m[32mTinyController {/v1/tenants/:tenantId/tiny}:[39m[38;5;3m +0ms[39m
-[32m[Nest] 1892433  - [39m15/10/2025, 15:54:33 [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/v1/tenants/:tenantId/tiny/sync, POST} route[39m[38;5;3m +0ms[39m
-[32m[Nest] 1892433  - [39m15/10/2025, 15:54:33 [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/v1/tenants/:tenantId/tiny/config, POST} route[39m[38;5;3m +1ms[39m
-[32m[Nest] 1892433  - [39m15/10/2025, 15:54:33 [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/v1/tenants/:tenantId/tiny/status, GET} route[39m[38;5;3m +0ms[39m
-[32m[Nest] 1892433  - [39m15/10/2025, 15:54:33 [32m    LOG[39m [38;5;3m[NestApplication] [39m[32mNest application successfully started[39m[38;5;3m +43ms[39m
+[32m[Nest] 1024890  - [39m16/10/2025, 17:07:11 [32m    LOG[39m [38;5;3m[NestFactory] [39m[32mStarting Nest application...[39m
+[32m[Nest] 1024890  - [39m16/10/2025, 17:07:11 [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mPrismaModule dependencies initialized[39m[38;5;3m +9ms[39m
+[32m[Nest] 1024890  - [39m16/10/2025, 17:07:11 [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mAppModule dependencies initialized[39m[38;5;3m +0ms[39m
+[32m[Nest] 1024890  - [39m16/10/2025, 17:07:11 [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mDREModule dependencies initialized[39m[38;5;3m +1ms[39m
+[32m[Nest] 1024890  - [39m16/10/2025, 17:07:11 [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mTinyModule dependencies initialized[39m[38;5;3m +0ms[39m
+[32m[Nest] 1024890  - [39m16/10/2025, 17:07:11 [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mImportModule dependencies initialized[39m[38;5;3m +0ms[39m
+[32m[Nest] 1024890  - [39m16/10/2025, 17:07:11 [32m    LOG[39m [38;5;3m[RoutesResolver] [39m[32mAppController {/v1}:[39m[38;5;3m +4ms[39m
+[32m[Nest] 1024890  - [39m16/10/2025, 17:07:11 [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/v1, GET} route[39m[38;5;3m +2ms[39m
+[32m[Nest] 1024890  - [39m16/10/2025, 17:07:11 [32m    LOG[39m [38;5;3m[RoutesResolver] [39m[32mDREController {/v1/dre}:[39m[38;5;3m +0ms[39m
+[32m[Nest] 1024890  - [39m16/10/2025, 17:07:11 [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/v1/dre, GET} route[39m[38;5;3m +1ms[39m
+[32m[Nest] 1024890  - [39m16/10/2025, 17:07:11 [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/v1/dre/filters, GET} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 1024890  - [39m16/10/2025, 17:07:11 [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/v1/dre/export, GET} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 1024890  - [39m16/10/2025, 17:07:11 [32m    LOG[39m [38;5;3m[RoutesResolver] [39m[32mImportController {/v1/tenants/:id/import}:[39m[38;5;3m +0ms[39m
+[32m[Nest] 1024890  - [39m16/10/2025, 17:07:11 [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/v1/tenants/:id/import, POST} route[39m[38;5;3m +1ms[39m
+[32m[Nest] 1024890  - [39m16/10/2025, 17:07:11 [32m    LOG[39m [38;5;3m[RoutesResolver] [39m[32mTinyController {/v1/tenants/:tenantId/tiny}:[39m[38;5;3m +0ms[39m
+[32m[Nest] 1024890  - [39m16/10/2025, 17:07:11 [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/v1/tenants/:tenantId/tiny/sync, POST} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 1024890  - [39m16/10/2025, 17:07:11 [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/v1/tenants/:tenantId/tiny/config, POST} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 1024890  - [39m16/10/2025, 17:07:11 [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/v1/tenants/:tenantId/tiny/status, GET} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 1024890  - [39m16/10/2025, 17:07:11 [32m    LOG[39m [38;5;3m[NestApplication] [39m[32mNest application successfully started[39m[38;5;3m +54ms[39m
 API on http://localhost:4000/v1

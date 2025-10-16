@@ -7,9 +7,10 @@
   - Environments: .env
 
  [32m[1m✓[22m[39m Starting...
- [32m[1m✓[22m[39m Ready in 1265ms
- [32m[1m✓[22m[39m Compiled / in 499ms (494 modules)
- GET / [32m200[39m in 621ms
- [32m[1m✓[22m[39m Compiled /integrations/tiny in 183ms (500 modules)
- [32m[1m✓[22m[39m Compiled /import in 248ms (508 modules)
- [32m[1m✓[22m[39m Compiled /dre in 116ms (514 modules)
+ [32m[1m✓[22m[39m Ready in 1303ms
+ [37m[1m○[22m[39m Compiling / ...
+ [32m[1m✓[22m[39m Compiled / in 524ms (494 modules)
+ GET / [32m200[39m in 659ms
+ [32m[1m✓[22m[39m Compiled /dre in 179ms (500 modules)
+ [32m[1m✓[22m[39m Compiled /_not-found in 146ms (503 modules)
+ GET /.well-known/appspecific/com.chrome.devtools.json [33m404[39m in 217ms
